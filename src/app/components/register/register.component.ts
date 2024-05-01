@@ -5,16 +5,24 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent {
-  @ViewChild('loginBtn') loginBtn!: ElementRef;
-  @ViewChild('signupBtn') signupBtn!: ElementRef;
-  loginFormSlideUp: boolean = false;
 
-  toggleForm(formType: string) {
-    if (formType === 'signup') {
-      this.loginFormSlideUp = true;
-    } else if (formType === 'login') {
-      this.loginFormSlideUp = false;
-    }
-  }
+// const signUpButton = document.getElementById('signUp');
+// const signInButton = document.getElementById('signIn');
+// const container = document.getElementById('container');
+
+// signUpButton.addEventListener('click', () => {
+// 	container.classList.add("right-panel-active");
+// });
+
+// signInButton.addEventListener('click', () => {
+// 	container.classList.remove("right-panel-active");
+// });
+
+export class RegisterComponent {
+    containerClass: string = "login-container";  
+
+  addClass() {
+    this.containerClass = "login-container right-panel-active";}
+  removeClass() {
+    this.containerClass = "login-container";}
 }
