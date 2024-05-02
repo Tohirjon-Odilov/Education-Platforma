@@ -17,7 +17,7 @@ body{
 .active{
     background-color: white;
     p {
-        color: black;
+        color: black !important;
     }
 }
 
@@ -43,3 +43,28 @@ ul{
 .main-wrapper{
   padding-right: 290px;
 }
+
+.padding{
+  padding-top: 160px;
+}
+
+.flex{
+  display: flex;
+}   
+
+.navbar-star {
+    position: relative;
+    padding: 7px;
+    padding-top: 2px;
+    display: inline-block;
+    background-color: rgb(153, 37, 155);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    i {
+      font-size: 12px;
+      color: white !important; 
+    }
+  }
