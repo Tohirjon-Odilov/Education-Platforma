@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './overwiew.component.html',
   styleUrl: './overwiew.component.scss'
 })
-export class OverwiewComponent {
-
-}
+export class OverwiewComponent {}
