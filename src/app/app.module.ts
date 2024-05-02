@@ -18,7 +18,8 @@ import { QuizComponent } from './components/pages/quiz/quiz.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AsideComponent } from './components/aside/aside.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { ConiformPasswordComponent } from './components/coniform-password/coniform-password.component';
+import { ConfirmPasswordComponent } from './components/confirm-password/confirm-password.component';
+import { ReceiveEmailCodeComponent } from './components/receive-email-code/receive-email-code.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ConiformPasswordComponent } from './components/coniform-password/conifo
     NavbarComponent,
     AsideComponent,
     ForgotPasswordComponent,
-    ConiformPasswordComponent
+    ConfirmPasswordComponent,
+    ReceiveEmailCodeComponent
   ],
   imports: [
     BrowserModule,
