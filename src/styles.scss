@@ -5,9 +5,20 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: #eceff3;
+}
+
+.active{
+    background-color: white;
+    p {
+        color: black;
+    }
+}
+
 .container{
     max-width: 1540px;
-    padding: 20px;
+    padding: 30px 20px;
     margin: 0 auto;
 }
 

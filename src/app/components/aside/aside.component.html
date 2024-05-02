@@ -6,24 +6,29 @@
 
     <ul class="aside-list">
       <li class="aside-item">
-        <i class="fa-brands fa-stack-overflow"></i>
-        <a [routerLink]="['/overview']">Overview</a>
+        <a routerLinkActive="active" [routerLink]="['/overview']">
+          <i class="fa-brands fa-stack-overflow"></i>
+          <p>Overview</p></a>
       </li>
       <li class="aside-item">
-        <i class="fa-solid fa-book-bookmark"></i>
-        <a [routerLink]="['/courses']">Courses</a>
+        <a routerLinkActive="active" [routerLink]="['/courses']">
+          <i class="fa-solid fa-book-bookmark"></i>
+          <p>Courses</p></a>
       </li>
       <li class="aside-item">
-        <i class="fa-solid fa-clipboard-question"></i>
-        <a [routerLink]="['/quiz']">Quiz</a>
+        <a routerLinkActive="active" [routerLink]="['/quiz']">
+          <i class="fa-solid fa-clipboard-question"></i>
+          <p>Quiz</p></a>
       </li>
       <li class="aside-item">
-        <i class="fa-regular fa-message"></i>
-        <a [routerLink]="['/messaging']">Messaging</a>
+        <a routerLinkActive="active" [routerLink]="['/messaging']">
+          <i class="fa-regular fa-message"></i>
+          <p>Messaging</p></a>
       </li>
       <li class="aside-item">
-        <i class="fa-solid fa-chart-line"></i>
-        <a [routerLink]="['/leaderboard']">Leaderboard</a>
+        <a routerLinkActive="active" [routerLink]="['/leaderboard']">
+          <i class="fa-solid fa-chart-line"></i>
+          <p>Leaderboard</p></a>
       </li>
     </ul>
 
