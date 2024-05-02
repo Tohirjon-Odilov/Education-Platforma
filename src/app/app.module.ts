@@ -17,6 +17,8 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { QuizComponent } from './components/pages/quiz/quiz.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AsideComponent } from './components/aside/aside.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ConiformPasswordComponent } from './components/coniform-password/coniform-password.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { AsideComponent } from './components/aside/aside.component';
     ProfileComponent,
     QuizComponent,
     NavbarComponent,
-    AsideComponent
+    AsideComponent,
+    ForgotPasswordComponent,
+    ConiformPasswordComponent
   ],
   imports: [
     BrowserModule,
