@@ -1,5 +1,5 @@
 <main class="site-main">
-  <div class="main-wrapper ">
+  <div class="main-wrapper">
     <app-aside></app-aside>
   </div>
   <app-navbar></app-navbar>
@@ -7,7 +7,7 @@
   <!-- <div class="padding"></div> -->
   <section class="overview-section padding">
     <div class="overview">
-      <div class="stats">
+      <div class="stats flex">
         <div class="rating flex">
           <div class="flex rating-item">
             <span class="navbar-star">
@@ -46,10 +46,91 @@
             </div>
           </div>
         </div>
-        <div class="activity"></div>
+        <div class="activity rating">
+          <h2>Activity</h2>
+          <ul class="activity__list flex">
+            <li class="activity__item">
+              <div class="activity__wrapper">
+                <span class="time">
+                  <p>3h 20m</p>
+                  <p>Oct 10, 2022</p>
+                </span>
+                <span height="" class="bar"></span>
+                <p class="weekdays">Mon</p>
+              </div>
+            </li>
+            <li class="activity__item">
+              <div class="activity__wrapper">
+                <span class="time">
+                  <p>3h 20m</p>
+                  <p>Oct 10, 2022</p>
+                </span>
+                <span height="" class="bar"></span>
+                <p class="weekdays">Tue</p>
+              </div>
+            </li>
+            <li class="activity__item">
+              <div class="activity__wrapper">
+                <span class="time">
+                  <p>3h 20m</p>
+                  <p>Oct 10, 2022</p>
+                </span>
+                <span height="" class="bar"></span>
+                <p class="weekdays">Wed</p>
+              </div>
+            </li>
+            <li class="activity__item">
+              <div class="activity__wrapper">
+                <span class="time">
+                  <p>3h 20m</p>
+                  <p>Oct 10, 2022</p>
+                </span>
+                <span height="" class="bar"></span>
+                <p class="weekdays">Thu</p>
+              </div>
+            </li>
+            <li class="activity__item">
+              <div class="activity__wrapper">
+                <span class="time">
+                  <p>3h 20m</p>
+                  <p>Oct 10, 2022</p>
+                </span>
+                <span height="" class="bar"></span>
+                <p class="weekdays">Fri</p>
+              </div>
+            </li>
+            <li class="activity__item select-item">
+              <div class="activity__wrapper">
+                <span class="time">
+                  <p>3h 20m</p>
+                  <p>Oct 10, 2022</p>
+                </span>
+                <span height="" class="bar"></span>
+                <p class="weekdays">Sat</p>
+              </div>
+            </li>
+            <li class="activity__item">
+              <div class="activity__wrapper">
+                <span class="time">
+                  <p>3h 20m</p>
+                  <p>Oct 10, 2022</p>
+                </span>
+                <span height="" class="bar"></span>
+                <p class="weekdays">Sun</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="stats flex">
+        <div class="upcoming rating">
+          <div class="title-wrapper flex">
+            <h2>Upcoming Courses</h2>
+            <a [routerLink]="['/courses']">All courses</a>
+          </div>
+        </div>
+        <div class="top-students rating activity"></div>
       </div>
     </div>
   </section>
-  
 </main>
-
