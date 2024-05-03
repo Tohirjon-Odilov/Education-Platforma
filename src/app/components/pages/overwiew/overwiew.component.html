@@ -122,14 +122,65 @@
           </ul>
         </div>
       </div>
-      <div class="stats flex">
+
+      <div class="stats flex upcoming-course__wrapper">
         <div class="upcoming rating">
           <div class="title-wrapper flex">
             <h2>Upcoming Courses</h2>
-            <a [routerLink]="['/courses']">All courses</a>
+            <a [routerLink]="['/courses']">
+              All courses
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
           </div>
+
+          <ul class="upcoming__list">
+            <li class="upcoming__item flex">
+              <img width="100" height="100" src="assets/images/kattamen.png" alt="">
+              <div class="upcoming__wrapper">
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non libero nulla quia molestiae distinctio corrupti, nam perferendis suscipit sunt sit impedit expedita, </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quod quidem ab et eius officia!</p>
+                <div class="flex">
+                  <strong class="img-wrapper"><img width="30" src="assets/images/kattamen.png" alt="">Katteman</strong>
+                  <strong><i class="fa-regular fa-paste"></i>Lecture</strong>
+                  <strong><i class="fa-regular fa-clock"></i>total length</strong>
+                </div>
+                <p class="time">Available at 08:00 AM</p>
+              </div>
+            </li>
+          </ul>
+          
         </div>
-        <div class="top-students rating activity"></div>
+
+        <div class="top-students rating upcoming">
+          <div class="title-wrapper flex">
+            <h2>Top Tier Students</h2>
+            <a [routerLink]="['/leaderboard']"
+              >All Leaderboard <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+
+          <ul class="top-students__list">
+            <li class="top-students__item">
+              <a [routerLink]="[]" class="flex">
+                <div class="flex">
+                  <img
+                    width="40"
+                    src="assets/images/kattamen.png"
+                    alt="Katteman aka'ni rasmi bor"
+                  />
+                  <div class="student__wrapper--name">
+                    <h3>Katteman</h3>
+                    <p>Indonesia, Kendal</p>
+                  </div>
+                </div>
+                <div class="student__wrapper--rating flex">
+                  <span></span>
+                  <p>45321</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
