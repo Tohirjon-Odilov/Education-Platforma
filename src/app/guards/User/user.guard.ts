@@ -1,21 +1,34 @@
-import { CanActivate, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { CanActivate, Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
+import { Token } from '../../models/token';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class UserGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router, private authService: AuthService) { }
+  canActivate(): boolean {
+    const token = localStorage.getItem('accessToken');
+    
+    if (token) {
+      const decoded: Token = jwtDecode(token);
 
-  canActivate(route: any, state: any): boolean {
-    if (this.authService.isAuthenticated()) {
-      const decodedToken = this.authService.decodeToken();
-      decodedToken.role = 'User';
-      return true;
+      const expireDate = new Date(decoded.exp * 1000); // Convert expiration timestamp to Date object
+      const currentDate = new Date();
+
+      if (expireDate > currentDate) {
+        // Token is not expired
+        return true;
+      } else {
+        // Token is expired, navigate to login page
+        this.router.navigateByUrl('/login');
+        return false;
+      }
     } else {
-      this.router.navigate(['/login']);
+      // Token is null, navigate to login page
+      this.router.navigateByUrl('/login');
       return false;
     }
   }
