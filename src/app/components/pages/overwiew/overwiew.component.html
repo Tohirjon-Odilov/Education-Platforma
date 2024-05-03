@@ -122,14 +122,38 @@
           </ul>
         </div>
       </div>
-      <div class="stats flex">
+      <div class="stats flex upcoming-course__wrapper">
         <div class="upcoming rating">
           <div class="title-wrapper flex">
             <h2>Upcoming Courses</h2>
-            <a [routerLink]="['/courses']">All courses</a>
+            <a [routerLink]="['/courses']">All courses <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
-        <div class="top-students rating activity"></div>
+        <div class="top-students rating  upcoming">
+          <div class="title-wrapper flex">
+            <h2>Top Tier Students</h2>
+            <a [routerLink]="['/courses']">All Leaderboard <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+          <ul class="top-students__list">
+            <li class="top-students__item">
+              <a [routerLink]="[]" class="flex">
+                <div class="flex">
+                  <img width="40" src="assets/images/kattamen.png" alt="Katteman aka'ni rasmi bor">
+                <div class="student__wrapper--name">
+                  <h3>Katteman</h3>
+                  <p>Indonesia, Kendal</p>
+                </div>
+                </div>
+                <div class="student__wrapper--rating">
+                  <span></span>
+                  <p>45321</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          
+        </div>
       </div>
     </div>
   </section>

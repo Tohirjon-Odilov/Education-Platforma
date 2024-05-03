@@ -200,4 +200,49 @@
       }
     }
   }
+
+  .upcoming-course__wrapper{
+
+    .title-wrapper{
+      align-items: center;
+      justify-content: space-between;
+
+      a{
+        color: #7662ea;
+        text-decoration: none;
+
+        *{
+          margin-left: 15px;
+          color: #7662ea;
+        }
+      }
+    }
+
+    .top-students{
+      max-width: 470px;
+      widows: 100%;
+
+      
+      
+      a{
+        margin-top: 40px;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        gap: 20px;
+
+        .flex{
+          align-items: center;
+          gap: 20px;
+        }
+      }
+      
+      .title-wrapper{
+        position: none;
+        display: flex !important;
+        
+        flex-direction: row !important;
+      }
+    }
+  }
 }
