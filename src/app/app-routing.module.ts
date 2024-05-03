@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RouterProtectGuard } from './guards/Admin/admin.guard';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { OverwiewComponent } from './components/pages/overwiew/overwiew.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -14,6 +13,8 @@ import { LeaderboardComponent } from './components/pages/leaderboard/leaderboard
 import { MessagingComponent } from './components/pages/messaging/messaging.component';
 import { ScheduleComponent } from './components/pages/schedule/schedule.component';
 import { CoursesComponent } from './components/pages/courses/courses.component';
+import { UserGuard } from './guards/User/user.guard';
+import { AdminGuard } from './guards/Admin/admin.guard';
 
 const routes: Routes = [
   { path: 'login', title: 'Login', component: RegisterComponent},
@@ -25,13 +26,13 @@ const routes: Routes = [
   { path: 'login', title: 'Login', component: RegisterComponent},
   { path: 'forgot-password', title: 'ForgotPassword', component: ForgotPasswordComponent},
   { path: 'overview', title: 'OverView', component: OverwiewComponent},
-  { path: 'courses', title: 'Courses', component: CoursesComponent},
-  { path: 'schedule', title: 'Schedule', component: ScheduleComponent},
-  { path: 'messaging', title: 'Messaging', component: MessagingComponent},
-  { path: 'leaderboard', title: 'Leader Board', component: LeaderboardComponent},
-  { path: 'course-detail', title: 'Course Detail', component: CourseDetailComponent},
-  { path: 'profile', title: 'Profile', component: ProfileComponent},
-  { path: 'quiz', title: 'Quiz', component: QuizComponent},
+  { path: 'courses', title: 'Courses', component: CoursesComponent, canActivate: [UserGuard]},
+  { path: 'schedule', title: 'Schedule', component: ScheduleComponent, canActivate: [UserGuard]},
+  { path: 'messaging', title: 'Messaging', component: MessagingComponent, canActivate: [UserGuard]},
+  { path: 'leaderboard', title: 'Leader Board', component: LeaderboardComponent, canActivate: [UserGuard]},
+  { path: 'course-detail', title: 'Course Detail', component: CourseDetailComponent, canActivate: [UserGuard]},
+  { path: 'profile', title: 'Profile', component: ProfileComponent, canActivate: [UserGuard]},
+  { path: 'quiz', title: 'Quiz', component: QuizComponent, canActivate: [UserGuard]},
   { path: '**', title: 'Not Found', component: NotFoundComponent},
 ];
 

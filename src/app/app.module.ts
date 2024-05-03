@@ -20,7 +20,8 @@ import { AsideComponent } from './components/aside/aside.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ConfirmPasswordComponent } from './components/confirm-password/confirm-password.component';
 import { ReceiveEmailCodeComponent } from './components/receive-email-code/receive-email-code.component';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import { ReceiveEmailCodeComponent } from './components/receive-email-code/recei
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterLink
+    RouterLink,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
