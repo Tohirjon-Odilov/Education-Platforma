@@ -211,14 +211,14 @@
         text-decoration: none;
         padding: 10px;
         border-radius: 10px;
-        
-        &:hover{
-         background-color: #7662ea;
-         color: white;
 
-         i{
+        &:hover {
+          background-color: #7662ea;
           color: white;
-         }
+
+          i {
+            color: white;
+          }
         }
 
         * {
@@ -233,11 +233,21 @@
       widows: 100%;
 
       .top-students__list a {
-        margin-top: 40px;
+        margin-bottom: 10px;
         justify-content: space-between;
         align-items: center;
         text-decoration: none;
         gap: 20px;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: #6d6d6d39;
+        }
+
+        img {
+          border-radius: 50%;
+        }
 
         .flex {
           align-items: center;
@@ -247,20 +257,18 @@
         .student__wrapper--rating {
           gap: 5px;
           align-items: center;
-          background-color: rgba(255, 166, 0, 0.315);
           padding: 2px 8px 4px;
           span {
             display: inline-block;
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background-color: rgba(234, 188, 37, 0.853);
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
           }
-          p{
+          p {
             font-weight: 500;
           }
           border-radius: 20px;
@@ -268,13 +276,43 @@
           -moz-border-radius: 20px;
           -ms-border-radius: 20px;
           -o-border-radius: 20px;
-}
+        }
 
         .title-wrapper {
           position: none;
           display: flex !important;
 
           flex-direction: row !important;
+        }
+      }
+
+      .top-students__item:nth-child(1) {
+        margin-top: 40px;
+
+        .student__wrapper--rating {
+          background-color: rgba(255, 166, 0, 0.315);
+        }
+
+        span {
+          background-color: rgba(234, 188, 37, 0.853);
+        }
+      }
+      .top-students__item:nth-child(2) {
+          .student__wrapper--rating {
+            background-color: #a3a5ab50;
+        }
+
+        span {
+          background-color: #a3a5ab;
+        }
+      }
+      .top-students__item:nth-child(3) {
+          .student__wrapper--rating {
+            background-color: #cc821354;
+        }
+
+        span {
+          background-color: #cc8213;
         }
       }
     }
