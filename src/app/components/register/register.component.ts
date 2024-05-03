@@ -61,7 +61,7 @@ export class RegisterComponent {
         }
       },
       error: (err) => {
-        console.error(err);
+        alert(err.error.message);
         console.log('vashshe error');
         // alert('Oops! Something went wrong. Please try again.');
         this.email = '';
