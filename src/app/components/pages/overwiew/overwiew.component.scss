@@ -201,47 +201,81 @@
     }
   }
 
-  .upcoming-course__wrapper{
-
-    .title-wrapper{
+  .upcoming-course__wrapper {
+    .title-wrapper {
       align-items: center;
       justify-content: space-between;
 
-      a{
+      a {
         color: #7662ea;
         text-decoration: none;
+        padding: 10px;
+        border-radius: 10px;
+        
+        &:hover{
+         background-color: #7662ea;
+         color: white;
 
-        *{
+         i{
+          color: white;
+         }
+        }
+
+        * {
           margin-left: 15px;
           color: #7662ea;
         }
       }
     }
 
-    .top-students{
+    .top-students {
       max-width: 470px;
       widows: 100%;
 
-      
-      
-      a{
+      .top-students__list a {
         margin-top: 40px;
         justify-content: space-between;
         align-items: center;
         text-decoration: none;
         gap: 20px;
 
-        .flex{
+        .flex {
           align-items: center;
           gap: 20px;
         }
-      }
-      
-      .title-wrapper{
-        position: none;
-        display: flex !important;
-        
-        flex-direction: row !important;
+
+        .student__wrapper--rating {
+          gap: 5px;
+          align-items: center;
+          background-color: rgba(255, 166, 0, 0.315);
+          padding: 2px 8px 4px;
+          span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(234, 188, 37, 0.853);
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+          }
+          p{
+            font-weight: 500;
+          }
+          border-radius: 20px;
+          -webkit-border-radius: 20px;
+          -moz-border-radius: 20px;
+          -ms-border-radius: 20px;
+          -o-border-radius: 20px;
+}
+
+        .title-wrapper {
+          position: none;
+          display: flex !important;
+
+          flex-direction: row !important;
+        }
       }
     }
   }
