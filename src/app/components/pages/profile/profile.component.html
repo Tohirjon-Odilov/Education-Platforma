@@ -1,11 +1,65 @@
 <main class="site-main">
-  <div class="main-wrapper ">
+  <div class="main-wrapper">
     <app-aside></app-aside>
   </div>
   <app-navbar></app-navbar>
 
-  <section class="profile-section">
-    <!-- Your code -->
+  <section class="profile-section padding">
+    <div class="profile-user inner-padding flex">
+      <div class="profile-img flex">
+        <img width="40" src="assets/images/kattamen.png" alt="" />
+        <div class="profile-img__wrapper">
+          <div class="flex xp-wrapper">
+            <h3>Alex Bojanovski</h3>
+            <button>
+              <i class="fa-regular fa-pen-to-square"></i> Edit Profile
+            </button>
+          </div>
+          <p>Indonesia, Sleman - Joined 2022</p>
+          <span class="progress-bar"><span class="progress"></span></span>
+          <div class="xp-wrapper">
+            <strong>1231 XP</strong>
+            <span>1300 XP</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-exp">
+        <a href="">
+          <span>Get 300 XP more for learning one course today </span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+        <a href="">
+          <span>Get 300 XP more for learning one course today</span>
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <app-activity></app-activity>
+
+    <div class="profile-course flex">
+      <div class="inner-padding">
+        <h2>Latest Course</h2>
+        <app-course-part></app-course-part>
+      </div>
+      <div class="inner-padding">
+        <h2>Latest Activity</h2>
+        <ul class="profile-course__list">
+          <li class="profile-course__item">
+            <span>
+              <span></span>
+            </span>
+            <div>
+              <h3>Completed Course</h3>
+              <div>
+                <img width="40" src="assets/images/kattamen.png" alt="" />
+                <p>Emotional Design Thinking & Design Psychology Masterclass</p>
+              </div>
+              <time>2 min ago</time>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
-  
 </main>
