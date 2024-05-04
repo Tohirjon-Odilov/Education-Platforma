@@ -20,6 +20,9 @@ import { AsideComponent } from './components/aside/aside.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ConfirmPasswordComponent } from './components/confirm-password/confirm-password.component';
 import { ReceiveEmailCodeComponent } from './components/receive-email-code/receive-email-code.component';
+import { CoursePartComponent } from './components/ui/course-part/course-part.component';
+import { NavbarTitleComponent } from './components/ui/navbar-title/navbar-title.component';
+import { ActivityComponent } from './components/ui/activity/activity.component';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { ReceiveEmailCodeComponent } from './components/receive-email-code/recei
     AsideComponent,
     ForgotPasswordComponent,
     ConfirmPasswordComponent,
-    ReceiveEmailCodeComponent
+    ReceiveEmailCodeComponent,
+    CoursePartComponent,
+    NavbarTitleComponent,
+    ActivityComponent
   ],
   imports: [
     BrowserModule,
