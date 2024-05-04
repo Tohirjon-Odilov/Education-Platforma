@@ -93,6 +93,7 @@
 
   .activity__item {
     position: relative;
+    cursor: pointer;
 
     .time {
       display: none;
@@ -163,11 +164,21 @@
 
     &:nth-child(6) {
       left: 330px;
+    }
 
-      .time {
+    &:nth-child(7) {
+      left: 390px;
+    }
+  }
+  .select-item {
+    .bar {
+      background-color: royalblue !important;
+    }
+
+    .time {
         display: block;
         position: absolute;
-        background-color: rgba(65, 105, 225, 0.392);
+        background-color: rgb(65, 105, 225);
         top: -20px;
         left: -45px;
         width: 120px;
@@ -177,20 +188,10 @@
         -moz-border-radius: 15px;
         -ms-border-radius: 15px;
         -o-border-radius: 15px;
+        color: white;
         p:first-child {
           font-weight: 600;
         }
       }
-    }
-
-    &:nth-child(7) {
-      left: 390px;
-    }
-  }
-
-  .select-item {
-    .bar {
-      background-color: royalblue !important;
-    }
   }
 }

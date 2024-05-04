@@ -37,10 +37,10 @@
       </div>
     </div>
   </div>
-  <div class="activity rating">
+  <div class={{status}}>
     <h2>Activity</h2>
     <ul class="activity__list flex">
-      <li class="activity__item">
+      <li class={{mon}} (click)="changeActivityMon()">
         <div class="activity__wrapper">
           <span class="time">
             <p>3h 20m</p>
@@ -50,7 +50,7 @@
           <p class="weekdays">Mon</p>
         </div>
       </li>
-      <li class="activity__item">
+      <li class={{tue}} (click)="changeActivityTue()">
         <div class="activity__wrapper">
           <span class="time">
             <p>3h 20m</p>
@@ -60,17 +60,17 @@
           <p class="weekdays">Tue</p>
         </div>
       </li>
-      <li class="activity__item">
+      <li class={{wed}} (click)="changeActivityWed()">
         <div class="activity__wrapper">
           <span class="time">
             <p>3h 20m</p>
-            <p>Oct 10, 2022</p>
+            <p>Oct 19, 2022</p>
           </span>
           <span height="" class="bar"></span>
           <p class="weekdays">Wed</p>
         </div>
       </li>
-      <li class="activity__item">
+      <li class={{thu}} (click)="changeActivityThu()">
         <div class="activity__wrapper">
           <span class="time">
             <p>3h 20m</p>
@@ -80,7 +80,7 @@
           <p class="weekdays">Thu</p>
         </div>
       </li>
-      <li class="activity__item">
+      <li class={{fri}} (click)="changeActivityFri()">
         <div class="activity__wrapper">
           <span class="time">
             <p>3h 20m</p>
@@ -90,7 +90,7 @@
           <p class="weekdays">Fri</p>
         </div>
       </li>
-      <li class="activity__item select-item">
+      <li class={{sat}} (click)="changeActivitySat()">
         <div class="activity__wrapper">
           <span class="time">
             <p>3h 20m</p>
@@ -100,7 +100,7 @@
           <p class="weekdays">Sat</p>
         </div>
       </li>
-      <li class="activity__item">
+      <li class={{sun}} (click)="changeActivitySun()">
         <div class="activity__wrapper">
           <span class="time">
             <p>3h 20m</p>
