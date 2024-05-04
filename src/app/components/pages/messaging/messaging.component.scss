@@ -196,7 +196,9 @@
     }    
     .inputMessage{
         width: 98%;
-        padding: 15px 15px;
+        display: flex;
+        align-items: center;
+        padding: 0px 15px;
         border-radius: 10px;
         background-color: #f2f2f2;
         outline: none;
@@ -208,6 +210,10 @@
             border: none;
             outline: none;
             background-color: transparent;
+            padding: 15px 0px;
+        }
+        svg{
+            cursor: pointer;
         }
     }
 
