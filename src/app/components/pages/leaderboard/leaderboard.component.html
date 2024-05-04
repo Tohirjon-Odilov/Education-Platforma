@@ -4,8 +4,77 @@
   </div>
   <app-navbar></app-navbar>
 
-  <section class="leaderboard-section">
+  <section class="leaderboard-section padding">
     <!-- Your code -->
+
+    <div class="warpper">
+
+      <div class="section">
+        
+        <div class="navbar1">
+          <div><h1>Leardboard</h1></div>
+        <div class="searchBorder">
+          <i class="fas fa-search"></i>
+          <input
+            class="search"
+            type="search"
+            placeholder="Search messages..."/>
+        </div>
+        <div class="Alltime">
+          <div class="Alltime" (click)="addClass()"><span class={{selected1}}>All Time</span></div>
+          <div class="Alltime" (click)="addClass2()" ><span class={{selected2}}>Weekly</span></div>
+          <div class="Alltime" (click)="addClass3()"><span class={{selected3}}>Monthly</span></div>
+          <!-- <span >Weekly</span>
+          <span >Monthly</span> -->
+        </div>
+      </div>
+      
+      <div class="navbar2">
+        <strong>RANK</strong>
+        <strong class="navbarName">NAME</strong>
+        <strong class="navbarTotal">TOTAL POINT</strong>
+        <strong class="navbarCompleted">COMPLETED COURSE</strong>
+        <strong class="navbarLearning">LEARNING TIME</strong>
+        <!-- <strong class="navbarActivity">ACTIVITY</strong> -->
+        <strong>ACTION</strong>
+      </div>
+
+      <div class="chiziq"></div>
+
+      <div>
+        <ul class="top-students__list">
+          <li class="top-students__item">
+            <a [routerLink]="[]" class="flex">
+              <div class="flex">
+                <div class="student__wrapper--rating flex">
+                  <p>1</p>
+                  <span></span>
+                </div>
+                <img
+                  width="40"
+                  src="assets/images/kattamen.png"
+                  alt="Katteman aka'ni rasmi bor"
+                />
+                <div class="student__wrapper--name">
+                  <h3>Maqsudkhan😎</h3>
+                  <p>Uzbekistan, Qashqadaryo</p>
+
+                </div>
+                <p class="total">45321</p>
+                <p class="completed">245</p>
+                <time class="learning">240h 39m</time>
+                <p class="action">•••</p>
+
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      </div>
+
+    </div>
+
   </section>
   
 </main>
