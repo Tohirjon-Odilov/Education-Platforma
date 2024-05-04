@@ -178,18 +178,44 @@
         justify-content: flex-end;
         align-items: flex-end;
         
-
+        
+        
         time{
             color: #bcbcbc;
             font-size: 12.8px;
         }
         p{
+            background-color: #7662EA;
+            color: white;
             border: 1px solid rgb(188, 188, 188);
             padding: 10px;
-            border-top-right-radius: 0 !important;            
+            border-bottom-right-radius: 0 !important;            
             border-radius: 8px;
         }
+
     }    
+    .inputMessage{
+        width: 98%;
+        display: flex;
+        align-items: center;
+        padding: 0px 15px;
+        border-radius: 10px;
+        background-color: #f2f2f2;
+        outline: none;
+        border: none;
+
+        input{
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            padding: 15px 0px;
+        }
+        svg{
+            cursor: pointer;
+        }
+    }
 
 
     
