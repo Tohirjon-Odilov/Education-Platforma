@@ -14,6 +14,16 @@ import { LeaderboardComponent } from './components/pages/leaderboard/leaderboard
 import { MessagingComponent } from './components/pages/messaging/messaging.component';
 import { ScheduleComponent } from './components/pages/schedule/schedule.component';
 import { CoursesComponent } from './components/pages/courses/courses.component';
+import { CategoryComponent } from './components/admin/category/category.component';
+import { CouponComponent } from './components/admin/coupon/coupon.component';
+import { CourseComponent } from './components/admin/course/course.component';
+import { LessonComponent } from './components/admin/lesson/lesson.component';
+import { MessageComponent } from './components/admin/message/message.component';
+import { QuestionComponent } from './components/admin/question/question.component';
+import { UserComponent } from './components/admin/user/user.component';
+import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
+import { VideoComponent } from './components/admin/video/video.component';
+import { QuizCRUDComponent } from './components/admin/quiz-crud/quiz-crud.component';
 
 const routes: Routes = [
   { path: 'login', title: 'Login', component: RegisterComponent},
@@ -37,7 +47,21 @@ const routes: Routes = [
   { path: 'course-detail', title: 'Course Detail', component: CourseDetailComponent},
   { path: 'profile', title: 'Profile', component: ProfileComponent},
   { path: 'quiz', title: 'Quiz', component: QuizComponent},
-  { path: '**', title: 'Not Found', component: NotFoundComponent},
+
+  { path: 'category', title: 'Category', component:CategoryComponent},
+  { path: 'coupon', title: 'Cupon', component: CouponComponent},
+  { path: 'course', title: 'Course', component: CourseComponent},
+  { path: 'lesson', title: 'Lesson', component: LessonComponent},
+  { path: 'message', title: 'Message', component: MessageComponent},
+  { path: 'question', title: 'Question', component: QuestionComponent},
+  { path: 'user', title: 'User', component: UserComponent},
+  { path: 'userActivity', title: 'User Activity', component: UserActivityComponent},
+  { path: 'video', title: 'Video', component: VideoComponent},
+  { path: 'quizCRUD', title: 'Quiz CRUD', component: QuizCRUDComponent},
+
+
+  
+  { path: '**', title: 'Not Found', component: NotFoundComponent}
 ];
 
 @NgModule({
