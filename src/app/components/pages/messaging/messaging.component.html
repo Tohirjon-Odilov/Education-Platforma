@@ -19,15 +19,15 @@
         </div>
 
         <div>
-          <div class="flex group2">
+          <div class="flex group2 cursor" (click)="toggle()">
             <span class="group3">GROUP</span>
-            <span
-              ><b><i class="fa-solid fa-chevron-up group4"></i></b
-            ></span>
+            <span>
+              <b><i class="{{ icon }}"></i></b>
+            </span>
           </div>
-          <ul>
+          <ul class="{{ toggleGroup }}">
             <li>
-              <a href="" class="groupp">
+              <a class="groupp cursor">
                 <img
                   width="50"
                   style="border-radius: 50%"
@@ -64,10 +64,14 @@
               <div class="flex shareAdd">
                 <h1>Cuap Design</h1>
                 <div>
-                  <a class="share2"
-                    ><i class="fa-solid fa-share-nodes"></i> Share group</a
-                  >
-                  <a> <i class="fa-solid fa-user-plus"></i>Add people</a>
+                  <a class="share2">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    Share group
+                  </a>
+                  <a>
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add people
+                  </a>
                 </div>
               </div>
             </div>

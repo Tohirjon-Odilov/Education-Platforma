@@ -25,7 +25,12 @@ const routes: Routes = [
   { path: 'login', title: 'Login', component: RegisterComponent},
   { path: 'forgot-password', title: 'ForgotPassword', component: ForgotPasswordComponent},
   { path: 'overview', title: 'OverView', component: OverwiewComponent},
-  { path: 'courses', title: 'Courses', component: CoursesComponent},
+  
+  { path: 'courses', title: 'Courses', component: CoursesComponent, children: [
+    { path: 'progress', title: 'Progress', component: CourseDetailComponent},
+    { path: 'upcoming', title: 'Course Detail', component: CourseDetailComponent},
+  ]},
+  
   { path: 'schedule', title: 'Schedule', component: ScheduleComponent},
   { path: 'messaging', title: 'Messaging', component: MessagingComponent},
   { path: 'leaderboard', title: 'Leader Board', component: LeaderboardComponent},
