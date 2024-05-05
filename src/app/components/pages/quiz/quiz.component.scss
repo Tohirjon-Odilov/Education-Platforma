@@ -69,6 +69,17 @@
     margin-right: 10px;
     outline: none;
     background-color: white;
+
+    &:disabled {
+      cursor: auto;
+      color: #d3d4d7;
+      border: 1px solid #d3d4d7;
+    }
+    
+    &:enabled:hover {
+      background-color: #7662ea;
+      color: white;
+    }
   }
 
   .check {
