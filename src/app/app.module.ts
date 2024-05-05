@@ -20,8 +20,24 @@ import { AsideComponent } from './components/aside/aside.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ConfirmPasswordComponent } from './components/confirm-password/confirm-password.component';
 import { ReceiveEmailCodeComponent } from './components/receive-email-code/receive-email-code.component';
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
+import { CoursePartComponent } from './components/ui/course-part/course-part.component';
+import { NavbarTitleComponent } from './components/ui/navbar-title/navbar-title.component';
+import { ActivityComponent } from './components/ui/activity/activity.component';
+import { CategoryComponent } from './components/admin/category/category.component';
+import { CouponComponent } from './components/admin/coupon/coupon.component';
+import { CourseComponent } from './components/admin/course/course.component';
+import { LessonComponent } from './components/admin/lesson/lesson.component';
+import { MessageComponent } from './components/admin/message/message.component';
+import { QuestionComponent } from './components/admin/question/question.component';
+import { UserComponent } from './components/admin/user/user.component';
+import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
+import { VideoComponent } from './components/admin/video/video.component';
+import { QuizCRUDComponent } from './components/admin/quiz-crud/quiz-crud.component';
+import { AdminAsideComponent } from './components/admin/admin-aside/admin-aside.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +57,21 @@ import { FormsModule } from '@angular/forms';
     AsideComponent,
     ForgotPasswordComponent,
     ConfirmPasswordComponent,
-    ReceiveEmailCodeComponent
+    ReceiveEmailCodeComponent,
+    CoursePartComponent,
+    NavbarTitleComponent,
+    ActivityComponent,
+    CategoryComponent,
+    CouponComponent,
+    CourseComponent,
+    LessonComponent,
+    MessageComponent,
+    QuestionComponent,
+    UserComponent,
+    UserActivityComponent,
+    VideoComponent,
+    QuizCRUDComponent,
+    AdminAsideComponent
   ],
   imports: [
     BrowserModule,
