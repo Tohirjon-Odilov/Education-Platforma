@@ -9,17 +9,15 @@ import { Login } from '../models/login';
 import { TokenModel } from '../models/token-model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  private apiUrl = 'https://edu-api.tohirjon.uz/api/';
 
-  private apiUrl = "https://localhost:7250/api/";
-
-  constructor(private router: Router, private http: HttpClient) { }  
+  constructor(private router: Router, private http: HttpClient) {}
   decodedToken: any;
   tokenKey = 'accessToken';
   role: string = '';
-
 
   decodeToken(): any {
     try {
@@ -27,18 +25,18 @@ export class AuthService {
       // console.log(this.decodedToken);
     } catch (error) {
       console.error('Error decoding token:', error);
-      console.log('Token decode qilinmadi')
+      console.log('Token decode qilinmadi');
       return null;
     }
   }
 
-  register(data:any) : Observable<Response>{
+  register(data: any): Observable<Response> {
     console.log('ishladi');
     return this.http.post<Response>(`${this.apiUrl}Auth/Register`, data).pipe(
-      map((response)=>{
+      map((response) => {
         console.log('keldi');
-        if(response.isSuccess){
-          console.log("Registered");
+        if (response.isSuccess) {
+          console.log('Registered');
         }
         return response;
       })
@@ -50,19 +48,16 @@ export class AuthService {
       map((response) => {
         console.log(response);
         if (response && response.isSucceed === true) {
-          console.log("Login");
+          console.log('Login');
           localStorage.setItem(this.tokenKey, response.token);
 
           this.decodedToken = this.decodeToken();
           console.log(this.decodeToken);
-
-
         }
         return response;
       })
     );
   }
-  
 
   isAuthenticated(): boolean {
     console.log('Is authenticated ga keldi');
@@ -76,15 +71,11 @@ export class AuthService {
     console.log('keldi lekin decodedToken null');
     return false; // Handle case where decodedToken is null or undefined
   }
-  
 
   isUser(): any {
     this.decodedToken = this.decodeToken();
-    if(this.decodedToken != 'User'){
+    if (this.decodedToken != 'User') {
       this.router.navigate(['/register']);
     }
-
-
   }
-
 }
