@@ -1,5 +1,6 @@
-Video Link
-[]()
+## Assalomu alaykum
+bu yerda siz bizning Education-platforma dasturimizga havola olishingiz mumkin.
+[YouTube](https://youtu.be/S8d4Wa-pIAc)
 
 # USER
 ![image](https://github.com/Education-Platforma/Education-Platforma/assets/82634626/e553ffbe-565d-47cd-8390-2acb3ab6b8f6)
