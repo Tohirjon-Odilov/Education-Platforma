@@ -1,16 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../../services/CRUDs/user.service';
 
 @Component({
   selector: 'app-leaderboard',
   templateUrl: './leaderboard.component.html',
   styleUrl: './leaderboard.component.scss'
 })
-export class LeaderboardComponent {
-
+export class LeaderboardComponent implements OnInit {
+  
+  constructor(private userService: UserService) { }
   selected1: string = "Alltime"
   selected2: string = "Alltime"
   selected3: string = "Alltime"
-
+  topStudents: any;
+  ngOnInit(): void {
+    this.userService.getAllUsers().subscribe(res => {
+      console.log(res);
+      this.topStudents = res;
+    })
+  }
   addClass(){
     this.selected1 = "weekly"
     this.selected2 = "Alltime"
@@ -26,6 +34,9 @@ export class LeaderboardComponent {
     this.selected2 = "Alltime"
     this.selected1 = "Alltime "
   }
+
+
+
 
 
 }
