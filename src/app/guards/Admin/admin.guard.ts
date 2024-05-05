@@ -5,17 +5,21 @@ import { AuthService } from '../../services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class RouterProtectGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
 
   constructor(private router: Router, private authService: AuthService) { }
 
   canActivate(route: any, state: any): boolean {
     if (this.authService.isAuthenticated()) {
       const decodedToken = this.authService.decodeToken();
-      decodedToken.role = 'Admin';
-      return true;
+      if (decodedToken && decodedToken.role && decodedToken.role.toLowerCase() === 'admin') {
+        return true;
+      } else {
+        this.router.navigate(['/not-found']);
+        return false;
+      }
     } else {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/register']);
       return false;
     }
   }

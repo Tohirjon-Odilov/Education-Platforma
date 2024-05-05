@@ -11,6 +11,6 @@ export class NotFoundComponent {
 
   }
   redirectToLogin(){
-    this.router.navigate(['/register']);
+    this.router.navigate(['/login']);
   }
 }
