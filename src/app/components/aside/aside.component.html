@@ -4,6 +4,8 @@
       <img src="/assets/images/logo.png" alt="Sayt logotipi bor">
     </a>
 
+    <!-- <app-admin-aside></app-admin-aside> -->
+
     <ul class="aside-list">
       <li class="aside-item">
         <a routerLinkActive="active" [routerLink]="['/overview']">
@@ -11,13 +13,15 @@
           <p>Overview</p></a>
       </li>
       <li class="aside-item">
-        <a routerLinkActive="active" [routerLink]="['/courses']">
+        <a routerLinkActive="active" [routerLink]="['/courses/progress']">
           <i class="fa-solid fa-book-bookmark"></i>
-          <p>Courses</p></a>
+          <p>Courses</p>
+        </a>
       </li>
-      <li class="aside-item">
+      <li class="aside-item">         
         <a routerLinkActive="active" [routerLink]="['/quiz']">
           <i class="fa-solid fa-clipboard-question"></i>
+          
           <p>Quiz</p></a>
       </li>
       <li class="aside-item">
@@ -27,7 +31,8 @@
       </li>
       <li class="aside-item">
         <a routerLinkActive="active" [routerLink]="['/leaderboard']">
-<i class="fa-solid fa-ranking-star"></i>          <p>Leaderboard</p></a>
+       <i class="fa-solid fa-ranking-star"></i>
+      <p>Leaderboard</p></a>
       </li>
     </ul>
 
