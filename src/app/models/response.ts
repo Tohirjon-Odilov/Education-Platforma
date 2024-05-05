@@ -1,4 +1,5 @@
 export interface Response {
-    succeeded: boolean;
-    errors: [];
+    message: string;
+    statusCode: number;
+    isSuccess: boolean;
 }

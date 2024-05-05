@@ -13,7 +13,7 @@ import { TokenModel } from '../models/token-model';
 })
 export class AuthService {
 
-  private apiUrl = "https://auth.tohirjon.uz/api/";
+  private apiUrl = "https://localhost:7250/api/";
 
   constructor(private router: Router, private http: HttpClient) { }  
   decodedToken: any;
@@ -34,10 +34,10 @@ export class AuthService {
 
   register(data:any) : Observable<Response>{
     console.log('ishladi');
-    return this.http.post<Response>(`${this.apiUrl}Users/Register`, data).pipe(
+    return this.http.post<Response>(`${this.apiUrl}Auth/Register`, data).pipe(
       map((response)=>{
         console.log('keldi');
-        if(response.succeeded){
+        if(response.isSuccess){
           console.log("Registered");
         }
         return response;
@@ -46,14 +46,17 @@ export class AuthService {
   }
 
   login(data: Login): Observable<TokenModel> {
-    console.log("salom");
-    return this.http.post<TokenModel>(`${this.apiUrl}Users/Login`, data).pipe(
+    return this.http.post<TokenModel>(`${this.apiUrl}Auth/Login`, data).pipe(
       map((response) => {
         console.log(response);
-        if (response && response.isSuccess === true) {
+        if (response && response.isSucceed === true) {
           console.log("Login");
           localStorage.setItem(this.tokenKey, response.token);
-          console.log(response);
+
+          this.decodedToken = this.decodeToken();
+          console.log(this.decodeToken);
+
+
         }
         return response;
       })
@@ -61,20 +64,19 @@ export class AuthService {
   }
   
 
-  isAuthenticated(): any {
+  isAuthenticated(): boolean {
+    console.log('Is authenticated ga keldi');
     this.decodedToken = this.decodeToken();
-    if(this.decodedToken){
-      if(this.decodedToken.expireDate > Date.now() * 1000){
-        return true;
-      }
-      else{
-        return false;
-      }
+    if (this.decodedToken) {
+      const expireDate = new Date(this.decodedToken.expireDate * 1000); // Convert expiration timestamp to Date object
+      const currentDate = new Date();
+      console.log('hozir exp date tekshiriladi');
+      return expireDate > currentDate; // Compare expiration date with current date
     }
-    else{
-      return false;
-    }
+    console.log('keldi lekin decodedToken null');
+    return false; // Handle case where decodedToken is null or undefined
   }
+  
 
   isUser(): any {
     this.decodedToken = this.decodeToken();

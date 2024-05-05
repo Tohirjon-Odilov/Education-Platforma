@@ -21,7 +21,9 @@ export class RegisterComponent {
   //   // Process form data here (e.g., send to server)
   //   form.reset(); // Reset form after submission
   // }
-  name = '';
+  fullname = '';
+  username = '';
+  country = '';
   email = '';
   password = '';
 
@@ -43,16 +45,10 @@ export class RegisterComponent {
   
     this.authService.login(data).subscribe({
       next: (response) => {
-        console.log(response.isSuccess)
-        if (response.isSuccess === true) {
+        console.log(response.isSucceed)
+        if (response.isSucceed === true) {
           const decodedToken: any = this.authService.decodeToken();
-          // console.log(decodedToken);
-          console.log(decodedToken);
-          if (decodedToken.role === 'User') {
-            this.router.navigate(['/overwiew']);
-          } else if (decodedToken.role === 'Admin') {
-            this.router.navigate(['']);
-          }
+          this.router.navigate(['/overview']);          
   
           this.email = '';
           this.password = '';
@@ -65,7 +61,7 @@ export class RegisterComponent {
         }
       },
       error: (err) => {
-        console.error(err);
+        alert(err.error.message);
         console.log('vashshe error');
         // alert('Oops! Something went wrong. Please try again.');
         this.email = '';
@@ -77,26 +73,29 @@ export class RegisterComponent {
 
 
 register(){
-  var data  = {
-    fullName: this.name,
+  const data = {
+    fullName: this.fullname,
+    username: this.username,
+    country: this.country,
     email: this.email,
-    password: this.password,
-    status: 'active',
-    age: 19,
-    roles: ['user'],
-  }
+    password: this.password
+  };
 
   this.authService.register(data).subscribe({
     next: (response) => {
-      if(response.succeeded){
+      if(response.isSuccess){
         this.removeClass()
-        this.name = '';
+        this.fullname = '';
+        this.country = '';
+        this.username = '';
         this.email = '';
         this.password = '';
       }
       else{
         alert('Oops !, Can you try again');
-        this.name = '';
+        this.fullname = '';
+        this.country = '';
+        this.username = '';
         this.email = '';
         this.password = '';
       }
@@ -104,7 +103,9 @@ register(){
     error: (err) => {
       // alert(err.message)
       alert('Oops !, Can you try again');
-      this.name = '';
+      this.fullname = '';
+      this.country = '';
+      this.username = '';
       this.email = '';
       this.password = '';
     }

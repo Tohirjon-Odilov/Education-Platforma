@@ -17,12 +17,12 @@
                       <div class="form-group">
                         <div class="input-group">
                           <p style="color: rgb(169, 163, 163); margin-right: 230px; font-size: 10px; margin-bottom: 4px;">Code</p>
-                          <input style="width: 100%;" id="newPassword" name="newPassword" placeholder="123456" class="form-control " type="number"> 
+                          <input style="width: 100%;" id="newPassword" [(ngModel)] = "code" name="newPassword" placeholder="123456" class="form-control " type="number"> 
 
                         </div>
                       </div>
                       <div class="form-group">
-                        <input style="background-color: #7662EA; margin-top: 35px; font-size: 15px;" name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Confirm" type="submit"><br>
+                        <input style="background-color: #7662EA; margin-top: 35px; font-size: 15px;" (click)="confirmCode()" name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Confirm" type="submit"><br>
                         <a style="color: #7662EA; font-size: 14px" [routerLink]="['/login']"><i class="fa-solid fa-arrow-left-long"></i>  Back to Sign in</a>
                         
                       </div>

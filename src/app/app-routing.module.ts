@@ -13,6 +13,7 @@ import { LeaderboardComponent } from './components/pages/leaderboard/leaderboard
 import { MessagingComponent } from './components/pages/messaging/messaging.component';
 import { ScheduleComponent } from './components/pages/schedule/schedule.component';
 import { CoursesComponent } from './components/pages/courses/courses.component';
+import { AuthGuard } from './guards/User/user.guard';
 import { UserGuard } from './guards/User/user.guard';
 import { AdminGuard } from './guards/Admin/admin.guard';
 import { CategoryComponent } from './components/admin/category/category.component';
@@ -28,10 +29,23 @@ import { QuizCRUDComponent } from './components/admin/quiz-crud/quiz-crud.compon
 
 const routes: Routes = [
   { path: 'login', title: 'Login', component: RegisterComponent},
-  { path: 'overview', title: 'OverView', component: OverwiewComponent},
+  { path: 'register', title: 'Register', component: RegisterComponent},
+  { path: 'overview', title: 'OverView', component: OverwiewComponent, canActivate: [AuthGuard]},
   { path: 'forgot-password', title: 'ForgotPassword', component: ForgotPasswordComponent},
   { path: 'confirm-password', title: 'ConfirmPassword', component: ConfirmPasswordComponent},
   { path: 'receive-email-code', title: 'ReceiveEmailCode', component:ReceiveEmailCodeComponent},
+
+//   { path: '', title: 'OverView', component: OverwiewComponent, canActivate: [AuthGuard]},
+//   { path: 'login', title: 'Login', component: RegisterComponent},
+//   { path: 'forgot-password', title: 'ForgotPassword', component: ForgotPasswordComponent},
+//   { path: 'courses', title: 'Courses', component: CoursesComponent, canActivate: [AuthGuard]},
+//   { path: 'schedule', title: 'Schedule', component: ScheduleComponent, canActivate: [AuthGuard]},
+//   { path: 'messaging', title: 'Messaging', component: MessagingComponent, canActivate: [AuthGuard]},
+//   { path: 'leaderboard', title: 'Leader Board', component: LeaderboardComponent, canActivate: [AuthGuard]},
+//   { path: 'course-detail', title: 'Course Detail', component: CourseDetailComponent, canActivate: [AuthGuard]},
+//   { path: 'profile', title: 'Profile', component: ProfileComponent, canActivate: [AuthGuard]},
+//   { path: 'quiz', title: 'Quiz', component: QuizComponent, canActivate: [AuthGuard]},
+
   
   { path: '', title: 'OverView', component: OverwiewComponent},
   { path: 'forgot-password', title: 'ForgotPassword', component: ForgotPasswordComponent},
@@ -58,6 +72,7 @@ const routes: Routes = [
   { path: 'userActivity', title: 'User Activity', component: UserActivityComponent},
   { path: 'video', title: 'Video', component: VideoComponent},
   { path: 'quizCRUD', title: 'Quiz CRUD', component: QuizCRUDComponent},
+
   { path: '**', title: 'Not Found', component: NotFoundComponent},
 ];
 
