@@ -59,14 +59,14 @@
 
       <div class="course__detail-course__content inner-padding">
         <h2>Course Content</h2>
-        <div class="course__detail-time flex">
+        <div class="course__detail-time flex cursor"  (click)="toggle()">
           <div class="flex text">
             6 sections ● 46 lectures ● 2h 30m total length
           </div>
-          <button>Expand All <i class="fa-solid fa-chevron-down"></i></button>
+          <button class="cursor">Expand All <i class="fa-solid fa-chevron-down"></i></button>
         </div>
         <!-- Video info -->
-        <ul>
+        <ul class={{toggleCourseContent}}>
           <li class="flex">
             <div class="flex">
               <i class="fa-solid fa-play"></i>

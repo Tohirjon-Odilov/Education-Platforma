@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './course-detail.component.scss'
 })
 export class CourseDetailComponent {
+  toggleCourseContent: string = "";
+
+  toggle(){
+    this.toggleCourseContent = this.toggleCourseContent === '' ? 'd-none' : '';
+  }
 
 }
