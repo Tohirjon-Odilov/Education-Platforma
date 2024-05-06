@@ -1,5 +1,5 @@
 <main class="site-main">
-  <div class="main-wrapper ">
+  <div class="main-wrapper">
     <app-aside></app-aside>
   </div>
   <app-navbar></app-navbar>
@@ -7,19 +7,32 @@
   <section class="schedule-section padding">
     <div class="container">
       <div class="field">
-        <input type="text" name="fullname" id="fullname" [(ngModel)] ="title" placeholder="Title" autofill="autofill">
+        <input
+          type="text"
+          name="fullname"
+          id="fullname"
+          [(ngModel)]="title"
+          placeholder="Title"
+          autofill="autofill"
+        />
         <label for="fullname">Title</label>
       </div>
       <div class="field">
-        <input type="text" name="fullname" id="fullname" [(ngModel)] ="expForWaatching" placeholder="Exp for waatching" autofill="autofill">
+        <input
+          type="text"
+          name="fullname"
+          id="fullname"
+          [(ngModel)]="expForWaatching"
+          placeholder="Exp for waatching"
+          autofill="autofill"
+        />
         <label for="fullname">Exp for waatching</label>
-      </div>        
-      <div class="field">
-        <input type="file" name="fullname" id="fullname" [(ngModel)] ="videoFile" (change)="handleFileSelect($event)" placeholder="video" autofill="autofill">
-        <label for="fullname">Video</label>
-      </div>        
+      </div>
+      <form (submit)="onSubmit()">
+        <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+        <button type="submit">Upload Photo</button>
+      </form>
       <button class="submit-button" (click)="submit()">Submit</button>
     </div>
   </section>
-  
 </main>
