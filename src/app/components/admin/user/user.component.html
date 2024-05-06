@@ -40,7 +40,7 @@
       <div class="chiziq"></div>
 
       <div>
-        <ul class="top-students__list"  *ngFor="let student of students">
+        <ul class="top-students__list"  *ngFor="let student of topStudents">
           <li class="top-students__item">
             <a [routerLink]="[]" class="flex">
               <div class="flex">
@@ -48,13 +48,13 @@
                   <p>{{ student.rank }}</p>
                   <span></span>
                 </div>
-                <img [src]="'assets/images/' + student.name.toLowerCase().split(' ').join('') + '.png'" width="40" [alt]="student.name + ' aka\'ni rasmi bor'">
+                <img [src]="student.photoPath === '' ? 'assets/images/kattamen.png' : 'https://edu-api.tohirjon.uz/' + student.photoPath" width="40" [alt]="student.name + ' aka\'ni rasmi bor'">
                 <div class="student__wrapper--name">
-                  <h3>{{ student.name }}</h3>
-                  <p>{{ student.country }}, {{ student.region }}</p>
+                  <h3>{{ student.fullName }}</h3>
+                  <p>{{ student.country }}</p>
                 </div>
-                <p class="total">{{ student.total }}</p>
-                <p class="completed">{{ student.completed }}</p>
+                <p class="total">{{ student.exp }}</p>
+                <p class="completed">{{ student.completedCourses }}</p>
                 <time class="learning">{{ student.learningTime }}</time>
                 <p class="action">•••</p>
               </div>

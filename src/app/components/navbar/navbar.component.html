@@ -8,10 +8,10 @@
       <i class="fa-regular fa-bell"></i>
       <div class="flex">
         <span class="navbar-star"><i class="fa-solid fa-star"></i></span>
-        <span>3475</span>
+        <span>{{user.exp}}</span>
         <span></span>
-        <img style="cursor: pointer;" title="Profile" [routerLink]="['/profile']" src="assets/images/kattamen.png" alt="" />
-        <p>Alex</p>
+        <img style="cursor: pointer; border-radius: 50%;" title="Profile" [routerLink]="['/profile']" [src]="'https://edu-api.tohirjon.uz/' + user.photoPath" alt="" />
+        <p>{{user.fullName}}</p>
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
 
       const expireDate = new Date(decoded.exp * 1000); // Convert expiration timestamp to Date object
       const currentDate = new Date();
-
+      
       if (expireDate > currentDate) {
         // Token is not expired
         return true;

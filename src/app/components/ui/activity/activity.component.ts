@@ -6,8 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './activity.component.scss',
 })
 export class ActivityComponent {
+  user: any;
+
   constructor() {
     console.log('Activity component created');
+    localStorage.getItem('user');
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   status: string = 'activity rating';
