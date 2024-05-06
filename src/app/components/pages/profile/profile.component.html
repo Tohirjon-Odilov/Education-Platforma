@@ -10,25 +10,25 @@
         <img width="40" src="assets/images/kattamen.png" alt="" />
         <div class="profile-img__wrapper">
           <div class="flex xp-wrapper">
-            <h3>Alex Bojanovski</h3>
-            <button>
+            <h3>{{user.fullName}}</h3>
+            <button class="none">
               <i class="fa-regular fa-pen-to-square"></i> Edit Profile
             </button>
           </div>
-          <p>Indonesia, Sleman - Joined 2022</p>
+          <p>{{user.country}} - Joined {{user.joinedData.split("-")[0]}}/{{user.joinedData.split("-")[1]}}/{{user.joinedData.split("-")[1].split("T")[0]}}</p>
           <span class="progress-bar"><span class="progress"></span></span>
           <div class="xp-wrapper">
-            <strong>1231 XP</strong>
+            <strong>{{user.exp}} XP</strong>
             <span>1300 XP</span>
           </div>
         </div>
       </div>
       <div class="profile-exp">
-        <a href="">
+        <a [routerLink]="['/quiz']">
           <span>Get 300 XP more for learning one course today </span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
-        <a href="">
+        <a routerLink="[/quiz]">
           <span>Get 300 XP more for learning one course today</span>
           <i class="fa-solid fa-chevron-right"></i>
         </a>
