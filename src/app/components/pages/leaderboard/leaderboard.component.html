@@ -54,7 +54,7 @@
                     <span></span>
                   </div>
                   <img
-                    [src]="student.photoPath === '' ? 'assets/images/kattamen.png' : 'https://edu-api.tohirjon.uz/' + student.photoPath"
+                    [src]="student.photoPath === null || student.photoPath === '' ? 'assets/images/kattamen.png' : 'https://edu-api.tohirjon.uz/' + student.photoPath"
                     width="40"
                     [alt]="student.name + ' avatar'"
                   />
