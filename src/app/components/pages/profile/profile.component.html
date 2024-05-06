@@ -11,7 +11,12 @@
         <div class="profile-img__wrapper">
           <div class="flex xp-wrapper">
             <h3>{{user.fullName}}</h3>
-            <form (submit)="onSubmit()">
+            <!-- <mat-form-field>
+              <input matInput type="file" id="fileInput">
+              <mat-icon matSuffix>attach_file</mat-icon>
+            </mat-form-field> -->
+            <!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+            <form (submit)="onSubmit()" class="edit-btn">
               <input style="appearance: none;" type="file" (change)="onFileSelected($event)" accept="image/*">
               <button type="submit">Upload Photo</button>
             </form>
@@ -20,12 +25,13 @@
             </button>
           </div>
           <p>{{user.country}} - Joined {{user.joinedData.split("-")[0]}}/{{user.joinedData.split("-")[1]}}/{{user.joinedData.split("-")[1].split("T")[0]}}</p>
-          <span class="progress-bar"><span [style]="'display: block;
+          <span class="progress-bar"><span [style]="
+          'display: block;
           width: 70%;
           height: 100%;
           border-radius: 10px;
-          background-color: blueviolet; 
-          width: ' +user.exp * 2 + 'px;'"></span></span>
+          background-color: blueviolet;
+          width: ' + user.exp / 13 + '%;'"></span></span>
           <div class="xp-wrapper">
             <strong>{{user.exp}} XP</strong>
             <span>1300 XP</span>

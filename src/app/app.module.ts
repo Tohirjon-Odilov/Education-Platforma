@@ -38,6 +38,9 @@ import { UserActivityComponent } from './components/admin/user-activity/user-act
 import { VideoComponent } from './components/admin/video/video.component';
 import { QuizCRUDComponent } from './components/admin/quiz-crud/quiz-crud.component';
 import { AdminAsideComponent } from './components/admin/admin-aside/admin-aside.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatInputModule } from '@angular/material/input';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -71,16 +74,18 @@ import { AdminAsideComponent } from './components/admin/admin-aside/admin-aside.
     UserActivityComponent,
     VideoComponent,
     QuizCRUDComponent,
-    AdminAsideComponent
+    AdminAsideComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterLink,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatSlideToggleModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

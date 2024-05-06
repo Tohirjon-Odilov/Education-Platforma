@@ -22,7 +22,7 @@ export class ProfileComponent {
       const formData = new FormData();
       formData.append('Id', this.user.id);
       formData.append('FullName', this.user.fullName);
-      formData.append('Role', this.user.Role);
+      formData.append('Role', "this.user.Role");
       formData.append('Photo', this.selectedFile);
       formData.append('Counry', this.user.country);
 
