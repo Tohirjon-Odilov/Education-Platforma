@@ -31,7 +31,7 @@ export class OverwiewComponent implements OnInit {
       this.topStudents = res.slice(0, 5);
 
       // a2ba924a-4ae0-4220-a08b-5aa1ecf359d6 id'ga to'gragan userni topdan olib kelish
-      this.user = res.find((user: any) => user.id === 'a2ba924a-4ae0-4220-a08b-5aa1ecf359d6');
+      this.user = res.find((user: any) => user.id === localStorage.getItem("userId"));
 
       localStorage.setItem('user', JSON.stringify(this.user));
 

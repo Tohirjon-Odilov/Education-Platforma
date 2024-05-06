@@ -50,8 +50,9 @@ export class AuthService {
         if (response && response.isSucceed === true) {
           console.log('Login');
           localStorage.setItem(this.tokenKey, response.token);
-
+          
           this.decodedToken = this.decodeToken();
+          // localStorage.setItem('userId', this.decodeToken);
           console.log(this.decodeToken);
         }
         return response;

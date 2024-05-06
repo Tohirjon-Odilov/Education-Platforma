@@ -7,16 +7,25 @@
   <section class="profile-section padding">
     <div class="profile-user inner-padding flex">
       <div class="profile-img flex">
-        <img width="40" src="assets/images/kattamen.png" alt="" />
+        <img width="40" [src]="user.photoPath === null || user.photoPath === '' ? 'assets/images/kattamen.png' : 'https://edu-api.tohirjon.uz/' + user.photoPath" alt="" />
         <div class="profile-img__wrapper">
           <div class="flex xp-wrapper">
             <h3>{{user.fullName}}</h3>
+            <form (submit)="onSubmit()">
+              <input style="appearance: none;" type="file" (change)="onFileSelected($event)" accept="image/*">
+              <button type="submit">Upload Photo</button>
+            </form>
             <button class="none">
               <i class="fa-regular fa-pen-to-square"></i> Edit Profile
             </button>
           </div>
           <p>{{user.country}} - Joined {{user.joinedData.split("-")[0]}}/{{user.joinedData.split("-")[1]}}/{{user.joinedData.split("-")[1].split("T")[0]}}</p>
-          <span class="progress-bar"><span class="progress"></span></span>
+          <span class="progress-bar"><span [style]="'display: block;
+          width: 70%;
+          height: 100%;
+          border-radius: 10px;
+          background-color: blueviolet; 
+          width: ' +user.exp * 2 + 'px;'"></span></span>
           <div class="xp-wrapper">
             <strong>{{user.exp}} XP</strong>
             <span>1300 XP</span>
