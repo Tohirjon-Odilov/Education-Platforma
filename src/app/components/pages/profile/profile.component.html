@@ -12,7 +12,7 @@
           <div class="flex xp-wrapper">
             <h3>{{user.fullName}}</h3>
             <form (submit)="onSubmit()">
-              <input type="file" (change)="onFileSelected($event)" accept="image/*">
+              <input style="appearance: none;" type="file" (change)="onFileSelected($event)" accept="image/*">
               <button type="submit">Upload Photo</button>
             </form>
             <button class="none">

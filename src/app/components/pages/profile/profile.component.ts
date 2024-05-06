@@ -20,18 +20,18 @@ export class ProfileComponent {
   onSubmit() {
     if (this.selectedFile) {
       const formData = new FormData();
-      formData.append('Id', '9a0299f0-4369-4813-9f27-83a4bf634090');
-      formData.append('FullName', 'Homidjon');
-      formData.append('Role', 'User');
+      formData.append('Id', this.user.id);
+      formData.append('FullName', this.user.fullName);
+      formData.append('Role', this.user.Role);
       formData.append('Photo', this.selectedFile);
-      formData.append('Counry', 'Andijon');
+      formData.append('Counry', this.user.country);
 
       // Send the photo to the server
       this.http
         .put<any>('https://edu-api.tohirjon.uz/api/User/UpdateUser', formData)
         .subscribe(
           (response) => {
-            console.log('Photo uploaded successfully!', response);
+            alert('Photo uploaded successfully!');
           },
           (error) => {
             console.error('Error uploading photo:', error);

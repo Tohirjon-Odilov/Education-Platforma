@@ -43,7 +43,7 @@ export class RegisterComponent {
         console.log(response.isSucceed);
         if (response.isSucceed === true) {
           const decodedToken: any = jwtDecode(response.token);
-
+          localStorage.setItem('userId', decodedToken.id);
           console.log(decodedToken);
           if (decodedToken.Role === 'Admin') {
             this.router.navigate(['/category']);

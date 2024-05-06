@@ -10,7 +10,7 @@
         <span class="navbar-star"><i class="fa-solid fa-star"></i></span>
         <span>{{user.exp}}</span>
         <span></span>
-        <img style="cursor: pointer; border-radius: 50%;" title="Profile" [routerLink]="['/profile']" [src]="'https://edu-api.tohirjon.uz/' + user.photoPath" alt="" />
+        <img style="cursor: pointer; border-radius: 50%;" title="Profile" [routerLink]="['/profile']" [src]="user.photoPath === null || user.photoPath === '' ? 'assets/images/kattamen.png' : 'https://edu-api.tohirjon.uz/' + user.photoPath" alt="" />
         <p>{{user.fullName}}</p>
       </div>
     </div>
