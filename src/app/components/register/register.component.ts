@@ -47,7 +47,7 @@ export class RegisterComponent {
           console.log(decodedToken);
           if (decodedToken.Role === 'Admin') {
             this.router.navigate(['/category']);
-          } else if (decodedToken.Role === '') {
+          } else if (decodedToken.Role === 'User' || decodedToken.Role === "" ) {
             this.router.navigate(['/overview']);
           }
 
