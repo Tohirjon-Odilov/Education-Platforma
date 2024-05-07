@@ -41,6 +41,10 @@ import { AdminAsideComponent } from './components/admin/admin-aside/admin-aside.
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CreateComponent } from './components/admin/category/components/create/create.component';
+import { UpdateComponent } from './components/admin/category/components/update/update.component';
+import { DeleteComponent } from './components/admin/category/components/delete/delete.component';
+import { GetAllComponent } from './components/admin/category/components/get-all/get-all.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +79,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     VideoComponent,
     QuizCRUDComponent,
     AdminAsideComponent,
+    CreateComponent,
+    UpdateComponent,
+    DeleteComponent,
+    GetAllComponent,
   ],
   imports: [
     BrowserModule,

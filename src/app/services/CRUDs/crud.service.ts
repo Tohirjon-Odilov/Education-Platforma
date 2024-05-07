@@ -12,6 +12,7 @@ import { LessonModel } from '../../models/lesson-model';
 })
 export class CrudService {
   private apiUrl = 'https://edu-api.tohirjon.uz/api/';
+  
   constructor(private http: HttpClient) {}
 
   CreateCategory(name: string): Observable<ResponseModel> {
@@ -22,6 +23,14 @@ export class CrudService {
           return response;
         })
       );
+  }
+
+  UpdateCategory(id: number, name: string): Observable<ResponseModel> {
+      return this.http.put<ResponseModel>(this.apiUrl + 'Category/UpdateCategory' + id, { name: name }).pipe(
+        map((response) => {
+          return response;
+        })
+      )
   }
 
   CreateCoupon(
@@ -54,6 +63,26 @@ export class CrudService {
       })
     );
   }
+
+  GetCategoryById(id: string): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'Category/GetCategory/' + id).pipe(
+      map((response) => {
+        return response;
+      })
+    )
+  }
+
+  DeleteCategory(id: string): Observable<any> {
+    const patch = [{ "op": "remove", "path": `/Category/DeleteCategory/${id}` }];
+    return this.http.patch<any>(this.apiUrl, patch, { headers: { 'Content-Type': 'application/json-patch+json' }}).pipe(
+      map((response) => {
+        return response;
+      })
+    );
+  }
+  
+  
+  
 
   CreateCourse(data: Course): Observable<ResponseModel> {
     console.log(data);
