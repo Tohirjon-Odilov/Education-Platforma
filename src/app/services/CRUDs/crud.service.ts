@@ -8,11 +8,9 @@ import { Course } from '../../models/course';
 import { LessonModel } from '../../models/lesson-model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CrudService {
-
-
   private apiUrl = 'https://edu-api.tohirjon.uz/api/';
   
   constructor(private http: HttpClient) {}
@@ -86,27 +84,24 @@ export class CrudService {
   
   
 
+  CreateCourse(data: Course): Observable<ResponseModel> {
+    console.log(data);
+    console.log('keldi service ga');
+    return this.http
+      .post<ResponseModel>(this.apiUrl + 'Course/CreateCourse', data)
+      .pipe(
+        map((response) => {
+          return response;
+        })
+      );
+  }
 
-
-CreateCourse(data: Course): Observable<ResponseModel> {
-  console.log(data);
-  console.log('keldi service ga');
-  return this.http
-    .post<ResponseModel>(this.apiUrl + 'Course/CreateCourse', data)
-    .pipe(
+  CreateLesson(data: LessonModel): Observable<any> {
+    data.CourseId = 'dd62fbd0-df18-4e9f-a80d-a94993a515f9';
+    return this.http.post(this.apiUrl + 'Lesson/CreateLesson', data).pipe(
       map((response) => {
         return response;
       })
     );
-}
-
-
-CreateLesson(data: LessonModel): Observable<any> {
-    return this.http.post(this.apiUrl + 'Lesson/CreateLesson', data).pipe(
-        map((response) => {
-          return response;
-        })
-    )
-}
-
+  }
 }
