@@ -16,18 +16,7 @@ export class DeleteComponent {
 
   constructor(private crudService: CrudService) { }
 
-  ngOnInit(): void { 
-    this.crudService.GetAllCategorys().subscribe(res => {
-      this.values = res;
 
-    })
-    this.values.find((item: any) => {
-      if (item.name === this.inputValue) {
-        this.items.push({ name: item.name, id: item.id })
-        this.categoryId = item.id;
-      }
-    })
-  }
   onInputFocus() {
     this.isFocused = true;
   }
@@ -48,4 +37,32 @@ export class DeleteComponent {
       console.log(res)
     })
   }
+
+  Search() {
+    this.crudService.GetAllCategorys().subscribe(res => {
+      // this.items = res
+      for (let i = 0; i < res.length; i++) {
+        if (res[i].name == this.inputValue) {
+          this.categoryId = res[i].id
+        }
+      }
+    })
+
+    this.crudService.GetCategoryById(this.categoryId).subscribe(res => {
+      console.log(res)
+      this.values = res
+      console.log(this.values)
+      this.items.push(this.values)
+    })
+
+  }
+
+
+
+
+
+
+
+
 }
+

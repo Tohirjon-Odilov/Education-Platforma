@@ -14,6 +14,7 @@ export class CrudService {
 
 
   private apiUrl = 'https://edu-api.tohirjon.uz/api/';
+  
   constructor(private http: HttpClient) {}
 
   CreateCategory(name: string): Observable<ResponseModel> {
@@ -65,7 +66,7 @@ export class CrudService {
     );
   }
 
-  GetCategoryByIsd(id: string): Observable<any> {
+  GetCategoryById(id: string): Observable<any> {
     return this.http.get<any>(this.apiUrl + 'Category/GetCategory/' + id).pipe(
       map((response) => {
         return response;
@@ -73,13 +74,17 @@ export class CrudService {
     )
   }
 
-  DeleteCategory(id:string): Observable<any> {
-    return this.http.delete<any>(this.apiUrl + 'Category/DeleteCategory/' + id).pipe(
+  DeleteCategory(id: string): Observable<any> {
+    const patch = [{ "op": "remove", "path": `/Category/DeleteCategory/${id}` }];
+    return this.http.patch<any>(this.apiUrl, patch, { headers: { 'Content-Type': 'application/json-patch+json' }}).pipe(
       map((response) => {
         return response;
       })
-    )
+    );
   }
+  
+  
+  
 
 
 

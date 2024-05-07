@@ -6,7 +6,7 @@
       class="custom-input" 
       type="text" 
       [(ngModel)]="inputValue" 
-      (focus)="onInputFocus()" 
+      (focus)="onInputFocus()"  
       (blur)="onInputBlur()">
   </div>
 
@@ -25,3 +25,6 @@
     </tbody>
   </table>
   
+  <button class="submit-button" (click)="Delete()">Delete</button>
+  <button class="submit-button" (click)="Search()">Search</button>
+
