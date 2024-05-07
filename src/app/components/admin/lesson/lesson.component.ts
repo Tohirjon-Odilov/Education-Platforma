@@ -31,65 +31,52 @@ export class LessonComponent {
 
   // name = 'Angular';
 
-  handleFileSelect(evt: any) {
-    var files = evt.target.files;
-    var file = files[0];
-
-    if (files && file) {
-      var reader = new FileReader();
-
-      reader.onload = this._handleReaderLoaded.bind(this);
-
-      reader.readAsBinaryString(file);
-    }
+  handleFileInput(event: any): void {
+    this.selectedFile = event.target.files[0];
   }
 
-  _handleReaderLoaded(readerEvt: any) {
-    var binaryString = readerEvt.target.result;
-    this.base64textString = btoa(binaryString);
-    console.log(btoa(binaryString));
-  }
-
-  submit() {
-    this.lesson.Title = this.title;
-    this.lesson.ExpForWatching = this.expForWaatching;
-    this.lesson.Video = this.base64textString;
-    console.log(this.lesson);
-    try {
-      // this.crudService.CreateLesson(this.lesson).subscribe(res => {
-      //   console.log(res)
-      //   if(res.isSuccess){
-      //     alert('Succesful')
-      //   }
-      //   else{
-      //     alert('Unsuccesful')
-      //   }
-      // })
-      alert('Succesful');
-    } catch (error) {
-      console.log(error);
-      alert('Unsuccesful');
+  uploadVideo(): void {
+    if (!this.selectedFile) {
+      return;
     }
 
-    this.title = '';
-    this.expForWaatching = 5;
-    this.videoFile = null;
-  }
+    const formData = new FormData();
+    formData.append('Video', this.selectedFile);
+    formData.append('CourseId', 'dd62fbd0-df18-4e9f-a80d-a94993a515f9');
+    formData.append('Title', "Kirish");
+    formData.append('ExpForWatching', "5");
 
-  onSubmit() {
-    if (this.selectedFile) {
-      const formData = new FormData();
-      formData.append('photo', this.selectedFile);
-
-      // Send the photo to the server
-      this.http.post<any>('https://example.com/upload', formData).subscribe(
+    this.http
+      .post('https://edu-api.tohirjon.uz/api/Lesson/CreateLesson', formData)
+      .subscribe(
         (response) => {
-          console.log('Photo uploaded successfully!', response);
+          console.log('Video uploaded successfully:', response);
         },
         (error) => {
-          console.error('Error uploading photo:', error);
+          console.error('Error uploading video:', error);
         }
       );
-    }
   }
+
+  // onSubmit() {
+  //   if (this.selectedFile) {
+  //     const formData = new FormData();
+  //     formData.append('photo', this.selectedFile);
+
+  //     // Send the photo to the server
+  //     this.http
+  //       .post<any>(
+  //         'https://edu-api.tohirjon.uz/api/Lesson/CreateLesson',
+  //         formData
+  //       )
+  //       .subscribe(
+  //         (response) => {
+  //           console.log('Photo uploaded successfully!', response);
+  //         },
+  //         (error) => {
+  //           console.error('Error uploading photo:', error);
+  //         }
+  //       );
+  //   }
+  // }
 }
