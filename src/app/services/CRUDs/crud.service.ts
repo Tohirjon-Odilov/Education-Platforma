@@ -26,6 +26,14 @@ export class CrudService {
       );
   }
 
+  UpdateCategory(id: number, name: string): Observable<ResponseModel> {
+      return this.http.put<ResponseModel>(this.apiUrl + 'Category/UpdateCategory' + id, { name: name }).pipe(
+        map((response) => {
+          return response;
+        })
+      )
+  }
+
   CreateCoupon(
     couponCode: string,
     discount: number
@@ -50,11 +58,27 @@ export class CrudService {
     );
   }
   GetAllCategorys(): Observable<any> {
-    return this.http.get<Category>(this.apiUrl + 'Category/all').pipe(
+    return this.http.get<Category>(this.apiUrl + 'Category/GetCategories').pipe(
       map((response) => {
         return response;
       })
     );
+  }
+
+  GetCategoryByIsd(id: string): Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'Category/GetCategory/' + id).pipe(
+      map((response) => {
+        return response;
+      })
+    )
+  }
+
+  DeleteCategory(id:string): Observable<any> {
+    return this.http.delete<any>(this.apiUrl + 'Category/DeleteCategory/' + id).pipe(
+      map((response) => {
+        return response;
+      })
+    )
   }
 
 
