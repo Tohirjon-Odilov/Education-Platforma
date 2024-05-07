@@ -1,6 +1,7 @@
 import { UserService } from './../../../services/CRUDs/user.service';
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../../../services/CRUDs/crud.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-category',
@@ -16,6 +17,26 @@ export class CategoryComponent implements OnInit {
     private crudService: CrudService,
     private UserService: UserService
   ) {}
+
+
+  currentComponent: string = 'create';
+
+  showCreateComponent() {
+    this.currentComponent = 'create';
+  }
+
+  showUpdateComponent() {
+    this.currentComponent = 'update';
+  }
+
+  showGetAllComponent() {
+    this.currentComponent = 'get-all';
+  }
+
+  showDeleteComponent() {
+    this.currentComponent = 'delete';
+  }
+
 
   ngOnInit(): void {
     this.UserService.getAllUsers().subscribe((res) => {
@@ -34,23 +55,23 @@ export class CategoryComponent implements OnInit {
     });
   }
   
-  submit() {
-    // Add your submit logic here
-    console.log('Keldi');
+  // submit() {
+  //   // Add your submit logic here
+  //   console.log('Keldi');
 
-    try {
-      this.crudService.CreateCategory(this.name).subscribe((res) => {
-        if (res.isSuccess) {
-          alert('Succesful');
-        } else {
-          alert('Unsuccesful');
-        }
-        console.log(res);
-      });
-      this.name = '';
-    } catch (error) {
-      console.log(error);
-      alert('error');
-    }
-  }
+  //   try {
+  //     this.crudService.CreateCategory(this.name).subscribe((res) => {
+  //       if (res.isSuccess) {
+  //         alert('Succesful');
+  //       } else {
+  //         alert('Unsuccesful');
+  //       }
+  //       console.log(res);
+  //     });
+  //     this.name = '';
+  //   } catch (error) {
+  //     console.log(error);
+  //     alert('error');
+  //   }
+  // }
 }
