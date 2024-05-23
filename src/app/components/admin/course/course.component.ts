@@ -7,85 +7,41 @@ import { Course } from '../../../models/course';
   templateUrl: './course.component.html',
   styleUrl: './course.component.scss'
 })
-export class CourseComponent implements OnInit {
+export class CourseComponent  {
 
-  courseName: string = '';
-  description: string = '';
-  totalTime: number = 0;
-  price: number = 0;
-  language: string = '';
-  teacherName: string = '';
-  selectedCoupon: string = '';
-  selectedCategory: string = '';
-  coupons: any[] = [];
-  categories: any[] = [];
-  data: Course = {
-    courseName: '',
-    description: '',
-    totalTime: 0,
-    price: 0,
-    language: '',
-    teacherName: '',
-    couponId: '',
-    categoryId:''
-  };
+  currentComponent: string = 'course-create';
 
-  constructor(private crudService: CrudService) { }
-  ngOnInit(): void {
-    try{
-      this.crudService.GetAllCoupons().subscribe(res => {
-        console.log(res)
-        this.coupons = res;
-      })
-    }
-    catch(error){
-      console.log(error);
-    }
-
-    try{
-      this.crudService.GetAllCategorys().subscribe(res => {
-        console.log(res)
-        this.categories = res;
-      })
-    }
-    catch(error){
-      console.log(error);
-    }
-
-    // console.log(this.coupons, this.categories);
+  showCreateComponent() {
+    this.currentComponent = 'course-create';
   }
 
-  submit() {
-    this.data = {
-      courseName: this.courseName,
-      description: this.description,
-      totalTime: this.totalTime,
-      price: this.price,
-      language: this.language,
-      teacherName: this.teacherName,
-      couponId: this.selectedCoupon,
-      categoryId: this.selectedCategory
-    }
-    // Add your submit logic here
-    try{
-      this.crudService.CreateCourse(this.data).subscribe(res => {
-        if(res.isSuccess){
-          alert('Succesful')
-        }
-        else{
-          alert('Unsuccesful')
-        }
-        console.log(res)
-      })
-    }
-    catch(error){
-      console.log(error);
-    }
-    this.courseName = '';
-    this.description = '';
-    this.totalTime = 0;
-    this.price = 0;
-    this.language = '';
-    this.teacherName = '';
+  showUpdateComponent() {
+    this.currentComponent = 'course-update';
   }
+
+  showGetAllComponent() {
+    this.currentComponent = 'course-get-all';
+  }
+
+  showDeleteComponent() {
+    this.currentComponent = 'course-delete';
+  }
+
+
+  // ngOnInit(): void {
+  //   this.UserService.getAllUsers().subscribe((res) => {
+  //     console.log(res);
+  //     this.topStudents = res;
+
+  //     this.user = res.find(
+  //       (user: any) => user.id === localStorage.getItem('userId')
+  //     );
+
+  //     // Number("23")
+
+  //     localStorage.setItem('user', JSON.stringify(this.user));
+
+  //     console.log(this.user.photoPath);
+  //   });
+  // }
 }

@@ -49,6 +49,10 @@ import { CouponCreateComponent } from './components/admin/coupon/coupon-create/c
 import { CouponUpdateComponent } from './components/admin/coupon/coupon-update/coupon-update.component';
 import { CouponGetAllComponent } from './components/admin/coupon/coupon-get-all/coupon-get-all.component';
 import { CouponDeleteComponent } from './components/admin/coupon/coupon-delete/coupon-delete.component';
+import { CourseCreateComponent } from './components/admin/course/course-create/course-create.component';
+import { CourseGetAllComponent } from './components/admin/course/course-get-all/course-get-all.component';
+import { CourseUpdateComponent } from './components/admin/course/course-update/course-update.component';
+import { CourseDeleteComponent } from './components/admin/course/course-delete/course-delete.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +95,10 @@ import { CouponDeleteComponent } from './components/admin/coupon/coupon-delete/c
     CouponUpdateComponent,
     CouponGetAllComponent,
     CouponDeleteComponent,
+    CourseCreateComponent,
+    CourseGetAllComponent,
+    CourseUpdateComponent,
+    CourseDeleteComponent,
   ],
   imports: [
     BrowserModule,
