@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CrudService } from '../../../services/CRUDs/crud.service';
+import { UserService } from '../../../services/CRUDs/user.service';
 
 @Component({
   selector: 'app-coupon',
@@ -7,30 +8,35 @@ import { CrudService } from '../../../services/CRUDs/crud.service';
   styleUrl: './coupon.component.scss'
 })
 export class CouponComponent {
-  couponCode = '';
-  discount = 0;
+
+  name = '';
+  topStudents: any;
+  user: any;
+  constructor(
+    private crudService: CrudService,
+    private UserService: UserService
+  ) {}
+
+
+  currentComponent: string = 'coupon-create';
+
+  showCreateComponent() {
+    this.currentComponent = 'coupon-create';
+  }
+
+  showUpdateComponent() {
+    this.currentComponent = 'coupon-update';
+  }
+
+  showGetAllComponent() {
+    this.currentComponent = 'coupon-get-all';
+  }
+
+  showDeleteComponent() {
+    this.currentComponent = 'coupon-delete';
+  }
+
+
+
  
-  constructor(private crudService: CrudService) {
-    
-  }
-  submit() {
-    // Add your submit logic here
-   this.crudService.CreateCoupon(this.couponCode, this.discount).subscribe(res => {
-       try{
-         if(res.isSuccess){
-           alert('Succesful')
-         }
-         else{
-           alert('Unsuccesful')
-         }
-         console.log(res)
-       }
-       catch(error){
-         console.log(error);
-         alert('error');
-       }
-   })
-   this.couponCode = '';
-   this.discount = 0;
-  }
 }

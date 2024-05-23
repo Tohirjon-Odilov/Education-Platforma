@@ -6,18 +6,18 @@
 
   <section class="schedule-section padding">
     
-    <div class="container">
-      <div class="field">
-        <input type="text" name="fullname" id="fullname" [(ngModel)] ="couponCode" placeholder="Full Name" autofill="autofill">
-        <label for="fullname">Coupon code</label>
-      </div>
-      <div class="field">
-        <input type="number" name="fullname" id="fullname" [(ngModel)] ="discount" placeholder="Full Name" autofill="autofill">
-        <label for="fullname">Discount</label>
-      </div>
-      <button class="submit-button" (click)="submit()">Submit</button>
-
+    <div class="button-container">
+      <button class="create-button" (click)="showCreateComponent()">Create</button>
+      <button class="update-button" (click)="showUpdateComponent()">Update</button>
+      <button class="get-all-button" (click)="showGetAllComponent()">Get All</button>
+      <button class="delete-button" (click)="showDeleteComponent()">Delete</button>
     </div>
+    
+    <app-coupon-create *ngIf="currentComponent === 'coupon-create'" class="create-component"></app-coupon-create>
+    <app-coupon-update *ngIf="currentComponent === 'coupon-update'" class="update-component"></app-coupon-update>
+    <app-coupon-get-all *ngIf="currentComponent === 'coupon-get-all'" class="get-all-component"></app-coupon-get-all>
+    <app-coupon-delete *ngIf="currentComponent === 'coupon-delete'" class="delete-component"></app-coupon-delete>
+    
   </section>
   
 </main>
