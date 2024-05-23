@@ -17,7 +17,7 @@ export class CrudService {
 
   CreateCategory(name: string): Observable<ResponseModel> {
     return this.http
-      .post<ResponseModel>(this.apiUrl + 'Category', { name: name })
+      .post<ResponseModel>(this.apiUrl + 'Category/CreateCategory', { name: name })
       .pipe(
         map((response) => {
           return response;
@@ -56,6 +56,29 @@ export class CrudService {
       })
     );
   }
+  deleteCoupon(couponId: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}Coupon/${couponId}`).pipe(
+      map((response) => {
+        return response;
+      })
+    );
+  }
+  getCouponById(couponId: string): Observable<Coupon> {
+    return this.http.get<Coupon>(`${this.apiUrl}Coupon/${couponId}`).pipe(
+      map((response) => {
+        return response;
+      })
+    );
+  }
+  updateCoupon(couponId: string, newCouponCode: string, newDiscount: number): Observable<ResponseModel> {
+    return this.http.put<ResponseModel>(`${this.apiUrl}${couponId}`, { couponCode: newCouponCode, discount: newDiscount}).pipe(
+      map((response) => {
+        return response;
+      })
+    );
+  }
+  
+    
   GetAllCategorys(): Observable<any> {
     return this.http.get<Category>(this.apiUrl + 'Category/GetCategories').pipe(
       map((response) => {
