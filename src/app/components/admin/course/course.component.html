@@ -5,10 +5,10 @@
   <app-navbar></app-navbar>
 
   <section class="schedule-section padding">
-    <app-create *ngIf="currentComponent === 'course-create'"></app-create>
-    <app-update *ngIf="currentComponent === 'course-update'"></app-update>
-    <app-get-all *ngIf="currentComponent === 'course-get-all'"></app-get-all>
-    <app-delete *ngIf="currentComponent === 'course-delete'"></app-delete>
+    <app-course-create *ngIf="currentComponent === 'course-create'"></app-course-create>
+    <app-course-update *ngIf="currentComponent === 'course-update'"></app-course-update>
+    <app-course-get-all *ngIf="currentComponent === 'course-get-all'"></app-course-get-all>
+    <app-course-delete *ngIf="currentComponent === 'course-delete'"></app-course-delete>
     
     
     <div class="button-container">

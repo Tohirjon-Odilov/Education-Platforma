@@ -55,7 +55,6 @@ import { CourseUpdateComponent } from './components/admin/course/course-update/c
 import { CourseDeleteComponent } from './components/admin/course/course-delete/course-delete.component';
 import { LessonCreateComponent } from './components/admin/lesson/lesson-create/lesson-create.component';
 import { LessonUpdateComponent } from './components/admin/lesson/lesson-update/lesson-update.component';
-import { LessonDetAlComponent } from './components/admin/lesson/lesson-det-al/lesson-det-al.component';
 import { LessonGetAllComponent } from './components/admin/lesson/lesson-get-all/lesson-get-all.component';
 import { LessonDeleteComponent } from './components/admin/lesson/lesson-delete/lesson-delete.component';
 import { MessageCreateComponent } from './components/admin/message/message-create/message-create.component';
@@ -64,7 +63,6 @@ import { MessageUpdateComponent } from './components/admin/message/message-updat
 import { MessageGetAllComponent } from './components/admin/message/message-get-all/message-get-all.component';
 import { QuestionCreateComponent } from './components/admin/question/question-create/question-create.component';
 import { QuestionUpdateComponent } from './components/admin/question/question-update/question-update.component';
-import { QuestionDelteComponent } from './components/admin/question/question-delte/question-delte.component';
 import { QuestionDeleteComponent } from './components/admin/question/question-delete/question-delete.component';
 import { QuestionGetAllComponent } from './components/admin/question/question-get-all/question-get-all.component';
 import { QuizCreateComponent } from './components/admin/quiz-crud/quiz-create/quiz-create.component';
@@ -75,7 +73,6 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
 @NgModule({
   declarations: [
     AppComponent,
-    // LoginComponent,
     RegisterComponent,
     NotFoundComponent,
     OverwiewComponent,
@@ -119,7 +116,6 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
     CourseDeleteComponent,
     LessonCreateComponent,
     LessonUpdateComponent,
-    LessonDetAlComponent,
     LessonGetAllComponent,
     LessonDeleteComponent,
     MessageCreateComponent,
@@ -128,7 +124,6 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
     MessageGetAllComponent,
     QuestionCreateComponent,
     QuestionUpdateComponent,
-    QuestionDelteComponent,
     QuestionDeleteComponent,
     QuestionGetAllComponent,
     QuizCreateComponent,
