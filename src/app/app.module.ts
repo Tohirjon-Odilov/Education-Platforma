@@ -57,10 +57,6 @@ import { LessonCreateComponent } from './components/admin/lesson/lesson-create/l
 import { LessonUpdateComponent } from './components/admin/lesson/lesson-update/lesson-update.component';
 import { LessonGetAllComponent } from './components/admin/lesson/lesson-get-all/lesson-get-all.component';
 import { LessonDeleteComponent } from './components/admin/lesson/lesson-delete/lesson-delete.component';
-import { MessageCreateComponent } from './components/admin/message/message-create/message-create.component';
-import { MessageDeleteComponent } from './components/admin/message/message-delete/message-delete.component';
-import { MessageUpdateComponent } from './components/admin/message/message-update/message-update.component';
-import { MessageGetAllComponent } from './components/admin/message/message-get-all/message-get-all.component';
 import { QuestionCreateComponent } from './components/admin/question/question-create/question-create.component';
 import { QuestionUpdateComponent } from './components/admin/question/question-update/question-update.component';
 import { QuestionDeleteComponent } from './components/admin/question/question-delete/question-delete.component';
@@ -118,10 +114,6 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
     LessonUpdateComponent,
     LessonGetAllComponent,
     LessonDeleteComponent,
-    MessageCreateComponent,
-    MessageDeleteComponent,
-    MessageUpdateComponent,
-    MessageGetAllComponent,
     QuestionCreateComponent,
     QuestionUpdateComponent,
     QuestionDeleteComponent,

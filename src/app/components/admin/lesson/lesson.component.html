@@ -5,6 +5,10 @@
   <app-navbar></app-navbar>
 
   <section class="schedule-section padding">
+    <app-lesson-create *ngIf="currentComponent === 'lesson-create'" class="create-component"></app-lesson-create>
+    <app-lesson-update *ngIf="currentComponent === 'lesson-update'" class="update-component"></app-lesson-update>
+    <app-lesson-get-all *ngIf="currentComponent === 'lesson-get-all'" class="get-all-component"></app-lesson-get-all>
+    <app-lesson-delete *ngIf="currentComponent === 'lesson-delete'" class="delete-component"></app-lesson-delete>
     <div class="button-container">
       <button class="create-button" (click)="showCreateComponent()">Create</button>
       <button class="update-button" (click)="showUpdateComponent()">Update</button>
@@ -12,9 +16,5 @@
       <button class="delete-button" (click)="showDeleteComponent()">Delete</button>
     </div>
     
-    <app-lesson-create *ngIf="currentComponent === 'lesson-create'" class="create-component"></app-lesson-create>
-    <app-lesson-update *ngIf="currentComponent === 'lesson-update'" class="update-component"></app-lesson-update>
-    <app-lesson-get-all *ngIf="currentComponent === 'lesson-get-all'" class="get-all-component"></app-lesson-get-all>
-    <app-lesson-delete *ngIf="currentComponent === 'lesson-delete'" class="delete-component"></app-lesson-delete>
   </section>
 </main>
