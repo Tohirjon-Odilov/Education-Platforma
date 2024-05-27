@@ -6,6 +6,23 @@ import { Component } from '@angular/core';
   styleUrl: './question.component.scss'
 })
 export class QuestionComponent {
+  currentComponent: string = 'question-create';
+
+  showCreateComponent() {
+    this.currentComponent = 'question-create';
+  }
+
+  showUpdateComponent() {
+    this.currentComponent = 'question-update';
+  }
+
+  showGetAllComponent() {
+    this.currentComponent = 'question-get-all';
+  }
+
+  showDeleteComponent() {
+    this.currentComponent = 'question-delete';
+  }
   question: string = '';
   optionA: string = '';
   optionB: string = '';

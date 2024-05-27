@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-activity',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './user-activity.component.scss'
 })
 export class UserActivityComponent {
-
+  
 }

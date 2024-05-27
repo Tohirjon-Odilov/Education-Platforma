@@ -5,19 +5,25 @@
   <app-navbar></app-navbar>
 
   <section class="schedule-section padding">
-    <div class="container">
-      <div class="field">
-        <input type="text" name="fullname" id="fullname"  placeholder="Message" autofill="autofill">
-        <label for="fullname">Course Name</label>
-      </div>
-      <div class="field">
-        <input type="text" name="fullname" id="fullname" [(ngModel)] ="description" placeholder="description" autofill="autofill">
-        <label for="fullname">Description</label>
-      </div>
+    <h1>Messages</h1>
 
-      <button class="submit-button" (click)="submit()">Submit</button>
-
-    </div>
+    <ul class="message-list">
+      <li *ngFor="let msg of messages" class="message-item">
+        <div class="message-avatar">
+          <img [src]="getAvatarUrl(msg.sender.photoPath)" alt="{{ msg.sender.userName }}">
+        </div>
+        <div class="message-content">
+          <div class="message-header">
+            <span class="message-sender">{{ msg.sender.userName }}</span>
+            <span class="message-time">{{ msg.date | date:'short' }}</span>
+          </div>
+          <div class="message-body">{{ msg.message }}</div>
+        </div>
+      </li>
+    </ul>
+    
+    
+    
   </section>
   
 </main>

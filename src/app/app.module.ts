@@ -23,6 +23,7 @@ import { ReceiveEmailCodeComponent } from './components/receive-email-code/recei
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ChartModule } from 'primeng/chart';
 
 import { CoursePartComponent } from './components/ui/course-part/course-part.component';
 import { NavbarTitleComponent } from './components/ui/navbar-title/navbar-title.component';
@@ -34,8 +35,6 @@ import { LessonComponent } from './components/admin/lesson/lesson.component';
 import { MessageComponent } from './components/admin/message/message.component';
 import { QuestionComponent } from './components/admin/question/question.component';
 import { UserComponent } from './components/admin/user/user.component';
-import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
-import { VideoComponent } from './components/admin/video/video.component';
 import { QuizCRUDComponent } from './components/admin/quiz-crud/quiz-crud.component';
 import { AdminAsideComponent } from './components/admin/admin-aside/admin-aside.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -55,27 +54,21 @@ import { CourseUpdateComponent } from './components/admin/course/course-update/c
 import { CourseDeleteComponent } from './components/admin/course/course-delete/course-delete.component';
 import { LessonCreateComponent } from './components/admin/lesson/lesson-create/lesson-create.component';
 import { LessonUpdateComponent } from './components/admin/lesson/lesson-update/lesson-update.component';
-import { LessonDetAlComponent } from './components/admin/lesson/lesson-det-al/lesson-det-al.component';
 import { LessonGetAllComponent } from './components/admin/lesson/lesson-get-all/lesson-get-all.component';
 import { LessonDeleteComponent } from './components/admin/lesson/lesson-delete/lesson-delete.component';
-import { MessageCreateComponent } from './components/admin/message/message-create/message-create.component';
-import { MessageDeleteComponent } from './components/admin/message/message-delete/message-delete.component';
-import { MessageUpdateComponent } from './components/admin/message/message-update/message-update.component';
-import { MessageGetAllComponent } from './components/admin/message/message-get-all/message-get-all.component';
 import { QuestionCreateComponent } from './components/admin/question/question-create/question-create.component';
 import { QuestionUpdateComponent } from './components/admin/question/question-update/question-update.component';
-import { QuestionDelteComponent } from './components/admin/question/question-delte/question-delte.component';
 import { QuestionDeleteComponent } from './components/admin/question/question-delete/question-delete.component';
 import { QuestionGetAllComponent } from './components/admin/question/question-get-all/question-get-all.component';
 import { QuizCreateComponent } from './components/admin/quiz-crud/quiz-create/quiz-create.component';
 import { QuizDeleteComponent } from './components/admin/quiz-crud/quiz-delete/quiz-delete.component';
 import { QuizUpdateComponent } from './components/admin/quiz-crud/quiz-update/quiz-update.component';
 import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/quiz-get-all.component';
+import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // LoginComponent,
     RegisterComponent,
     NotFoundComponent,
     OverwiewComponent,
@@ -101,8 +94,6 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
     MessageComponent,
     QuestionComponent,
     UserComponent,
-    UserActivityComponent,
-    VideoComponent,
     QuizCRUDComponent,
     AdminAsideComponent,
     CreateComponent,
@@ -119,22 +110,17 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
     CourseDeleteComponent,
     LessonCreateComponent,
     LessonUpdateComponent,
-    LessonDetAlComponent,
     LessonGetAllComponent,
     LessonDeleteComponent,
-    MessageCreateComponent,
-    MessageDeleteComponent,
-    MessageUpdateComponent,
-    MessageGetAllComponent,
     QuestionCreateComponent,
     QuestionUpdateComponent,
-    QuestionDelteComponent,
     QuestionDeleteComponent,
     QuestionGetAllComponent,
     QuizCreateComponent,
     QuizDeleteComponent,
     QuizUpdateComponent,
     QuizGetAllComponent,
+    UserActivityComponent,
   ],
   imports: [
     BrowserModule,
@@ -143,7 +129,8 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
     HttpClientModule,
     FormsModule,
     MatInputModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ChartModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
