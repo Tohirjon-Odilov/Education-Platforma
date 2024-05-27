@@ -23,6 +23,7 @@ import { ReceiveEmailCodeComponent } from './components/receive-email-code/recei
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ChartModule } from 'primeng/chart';
 
 import { CoursePartComponent } from './components/ui/course-part/course-part.component';
 import { NavbarTitleComponent } from './components/ui/navbar-title/navbar-title.component';
@@ -34,8 +35,6 @@ import { LessonComponent } from './components/admin/lesson/lesson.component';
 import { MessageComponent } from './components/admin/message/message.component';
 import { QuestionComponent } from './components/admin/question/question.component';
 import { UserComponent } from './components/admin/user/user.component';
-import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
-import { VideoComponent } from './components/admin/video/video.component';
 import { QuizCRUDComponent } from './components/admin/quiz-crud/quiz-crud.component';
 import { AdminAsideComponent } from './components/admin/admin-aside/admin-aside.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -65,6 +64,7 @@ import { QuizCreateComponent } from './components/admin/quiz-crud/quiz-create/qu
 import { QuizDeleteComponent } from './components/admin/quiz-crud/quiz-delete/quiz-delete.component';
 import { QuizUpdateComponent } from './components/admin/quiz-crud/quiz-update/quiz-update.component';
 import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/quiz-get-all.component';
+import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
 
 @NgModule({
   declarations: [
@@ -94,8 +94,6 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
     MessageComponent,
     QuestionComponent,
     UserComponent,
-    UserActivityComponent,
-    VideoComponent,
     QuizCRUDComponent,
     AdminAsideComponent,
     CreateComponent,
@@ -122,6 +120,7 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
     QuizDeleteComponent,
     QuizUpdateComponent,
     QuizGetAllComponent,
+    UserActivityComponent,
   ],
   imports: [
     BrowserModule,
@@ -130,7 +129,8 @@ import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/q
     HttpClientModule,
     FormsModule,
     MatInputModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ChartModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

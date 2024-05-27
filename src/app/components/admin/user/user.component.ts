@@ -22,7 +22,6 @@ export class UserComponent {
         (user: any) => user.id === 'a2ba924a-4ae0-4220-a08b-5aa1ecf359d6'
       );
 
-      localStorage.setItem('user', JSON.stringify(this.user));
 
       console.log(this.user.photoPath);
     });

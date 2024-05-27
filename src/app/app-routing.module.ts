@@ -23,9 +23,8 @@ import { LessonComponent } from './components/admin/lesson/lesson.component';
 import { MessageComponent } from './components/admin/message/message.component';
 import { QuestionComponent } from './components/admin/question/question.component';
 import { UserComponent } from './components/admin/user/user.component';
-import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
-import { VideoComponent } from './components/admin/video/video.component';
 import { QuizCRUDComponent } from './components/admin/quiz-crud/quiz-crud.component';
+import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
 
 const routes: Routes = [
   { path: 'login', title: 'Login', component: RegisterComponent},
@@ -56,9 +55,8 @@ const routes: Routes = [
   { path: 'message', title: 'Message', component: MessageComponent},
   { path: 'question', title: 'Question', component: QuestionComponent},
   { path: 'user', title: 'User', component: UserComponent},
-  { path: 'userActivity', title: 'User Activity', component: UserActivityComponent},
-  { path: 'video', title: 'Video', component: VideoComponent},
   { path: 'quizCRUD', title: 'Quiz CRUD', component: QuizCRUDComponent},
+  { path: 'userActivity', title: 'UserActivity', component: UserActivityComponent},
 
   
 //   { path: '', title: 'OverView', component: OverwiewComponent, canActivate: [AuthGuard]},
