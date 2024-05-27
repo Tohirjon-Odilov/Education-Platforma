@@ -6,10 +6,21 @@ import { Component } from '@angular/core';
   styleUrl: './quiz-crud.component.scss'
 })
 export class QuizCRUDComponent {
-  title = "";
-  courseId = "";
-  
-  submit() {
-    this.title = "";
+  currentComponent: string = 'quiz-create';
+
+  showCreateComponent() {
+    this.currentComponent = 'quiz-create';
+  }
+
+  showUpdateComponent() {
+    this.currentComponent = 'quiz-update';
+  }
+
+  showGetAllComponent() {
+    this.currentComponent = 'quiz-get-all';
+  }
+
+  showDeleteComponent() {
+    this.currentComponent = 'quiz-delete';
   }
 }
