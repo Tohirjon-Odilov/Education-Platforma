@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../../../../services/CRUDs/crud.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-coupon-get-all',
@@ -9,14 +10,12 @@ import { CrudService } from '../../../../services/CRUDs/crud.service';
 export class CouponGetAllComponent implements OnInit {
 
   allCoupons: any;
-  constructor(private crudService: CrudService) { }
+    constructor(private http: HttpClient) { }
   ngOnInit(): void {
-    this.crudService.GetAllCoupons().subscribe(res => {
+    this.http.get('https://edu-api.tohirjon.uz/api/Coupon/all').subscribe(res => {
       this.allCoupons = res
-      
+      console.log(this.allCoupons)
     })
-
-    console.log(this.allCoupons)
   }
 
 }
