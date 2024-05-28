@@ -18,7 +18,9 @@
           Upcoming <span class="badge-span">2</span>
         </button>
       </div>
+
       <div class="course-cards">
+        @for (course of allCourses; track course.id) {
         <div [routerLink]="['/course-detail']" class="course-card cursor">
           <img
             src="assets/images/kattamen.png"
@@ -26,11 +28,10 @@
           />
           <div class="course-info">
             <h2>
-              UX & Web Design Master Course: Strategy, Design, Development
+              {{course.courseName}}
             </h2>
             <p>
-              Lorem ipsum dolor atis delectus consequuntur temporibus beatae
-              eveniet.
+              {{course.description}}
             </p>
             <div class="card-info">
               <div>
@@ -38,15 +39,15 @@
                   src="assets/images/kattamen.png"
                   alt=""
                 />
-                <p>Ramon Reynald</p>
+                <p>{{course.teacherName}}</p>
               </div>
               <div>
                 <i class="fa-regular fa-folder-open"></i>
-                <p>62 lectures</p>
+                <p>{{course.lessons.length}} lectures</p>
               </div>
               <div>
                 <i class="fa-regular fa-clock"></i>
-                <p>3h 4m total length</p>
+                <p>{{formatTotalTime(course.totalTime)}} total length</p>
               </div>
             </div>
             <div class="progress-amount">
@@ -60,6 +61,7 @@
             </div>
           </div>
         </div>
+      }
       </div>
     </div>
     <div class="recom-courses">
