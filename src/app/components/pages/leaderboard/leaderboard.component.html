@@ -50,7 +50,7 @@
               <a [routerLink]="[]" class="flex">
                 <div class="flex">
                   <div class="student__wrapper--rating flex">
-                    <p>{{ student.rank }}</p>
+                    <p class="p-fixed">{{ student.rank }}</p>
                     <span></span>
                   </div>
                   <img
@@ -59,8 +59,8 @@
                     [alt]="student.name + ' avatar'"
                   />
                   <div class="student__wrapper--name">
-                    <h3>{{ student.fullName }}</h3>
-                    <p>{{ student.country }}</p>
+                    <h3 class="p-fixed">{{ student.fullName }}</h3>
+                    <p class="p-fixed">{{ student.country }}</p>
                   </div>
                   <p class="total">{{ student.exp }}</p>
                   <p class="completed">{{ student.completedCourses }}</p>

@@ -11,7 +11,7 @@
         <span>{{user.exp}}</span>
         <span></span>
         <img style="cursor: pointer; border-radius: 50%;" title="Profile" [routerLink]="['/profile']" [src]="user.photoPath === null || user.photoPath === '' ? 'assets/images/kattamen.png' : 'https://edu-api.tohirjon.uz/' + user.photoPath" alt="" />
-        <p>{{user.fullName}}</p>
+        <p class="p-fixed">{{user.fullName}}</p>
       </div>
     </div>
   </div>
