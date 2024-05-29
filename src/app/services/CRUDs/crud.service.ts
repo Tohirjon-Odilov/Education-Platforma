@@ -11,7 +11,7 @@ import { LessonModel } from '../../models/lesson-model';
   providedIn: 'root',
 })
 export class CrudService {
-  private apiUrl = 'https://localhost:7250/api/';
+  private apiUrl = 'https://edu-api.tohirjon.uz/api/';
   
   constructor(private http: HttpClient) {}
 
