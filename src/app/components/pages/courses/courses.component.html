@@ -27,10 +27,10 @@
             alt=""
           />
           <div class="course-info">
-            <h2>
+            <h2 class="p-fixed">
               {{course.courseName}}
             </h2>
-            <p>
+            <p class="p-fixed">
               {{course.description}}
             </p>
             <div class="card-info">
@@ -39,15 +39,15 @@
                   src="assets/images/kattamen.png"
                   alt=""
                 />
-                <p>{{course.teacherName}}</p>
+                <p class="p-fixed">{{course.teacherName}}</p>
               </div>
               <div>
                 <i class="fa-regular fa-folder-open"></i>
-                <p>{{course.lessons.length}} lectures</p>
+                <p class="p-fixed">{{course.lessons.length}} lectures</p>
               </div>
               <div>
                 <i class="fa-regular fa-clock"></i>
-                <p>{{formatTotalTime(course.totalTime)}} total length</p>
+                <p class="p-fixed">{{formatTotalTime(course.totalTime)}} total length</p>
               </div>
             </div>
             <div class="progress-amount">
@@ -66,7 +66,7 @@
     </div>
     <div class="recom-courses">
       <div class="recom-courses-navbar">
-        <h2>Recommended Course</h2>
+        <h2 class="p-fixed">Recommended Course</h2>
         <button class="d-none">Browse Course <i class="fa-solid fa-arrow-right"></i></button>
       </div>
       @for (course of allCourses; track course.id) {
@@ -77,16 +77,29 @@
             alt=""
           />
           <div class="course-info">
-            <h2>{{course.courseName}}</h2>
-            <p>{{course.description}}</p>
+<!-- <<<<<<< HEAD
+            <h2 class="p-fixed">UX & Web Design Master Course: Strategy, Design,</h2>
+            <p class="p-fixed">Lorem ipsum dolor atis beatae eveniet.</p>
             <div class="card-info">
               <div>
                 <i class="fa-regular fa-folder-open"></i>
-                <p>{{course.lessons.length}} lectures</p>
+                <p class="p-fixed">62 lectures</p>
               </div>
               <div>
                 <i class="fa-regular fa-clock"></i>
-                <p>{{formatTotalTime(course.totalTime)}} total length</p>
+                <p class="p-fixed">3h 4m total length</p>
+======= -->
+            <h2 class="p-fixed">{{course.courseName}}</h2>
+            <p class="p-fixed">{{course.description}}</p>
+            <div class="card-info">
+              <div>
+                <i class="fa-regular fa-folder-open"></i>
+                <p class="p-fixed">{{course.lessons.length}} lectures</p>
+              </div>
+              <div>
+                <i class="fa-regular fa-clock"></i>
+                <p class="p-fixed">{{formatTotalTime(course.totalTime)}} total length</p>
+<!-- >>>>>>> 55044c0ecf505ffd0be4aab16c32d40193075488 -->
               </div>
             </div>
             <div class="course-owner">
@@ -94,7 +107,11 @@
                 src="assets/images/kattamen.png"
                 alt=""
               />
-              <p>{{course.teacherName}}</p>
+<!-- <<<<<<< HEAD
+              <p class="p-fixed">Ramon Reynald</p>
+======= -->
+              <p class="p-fixed">{{course.teacherName}}</p>
+<!-- >>>>>>> 55044c0ecf505ffd0be4aab16c32d40193075488 -->
             </div>
           </div>
         </div>

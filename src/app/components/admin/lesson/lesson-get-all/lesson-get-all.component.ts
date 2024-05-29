@@ -8,18 +8,28 @@ import { Observable } from 'rxjs';
   styleUrl: './lesson-get-all.component.scss'
 })
 export class LessonGetAllComponent {
-  private apiUrl = 'https://edu-api.tohirjon.uz/api/Course/GetAllCourses';
+  private apiUrl1 = 'https://edu-api.tohirjon.uz/api/Course/GetAllCourses';
   private lessonsUrl = 'https://edu-api.tohirjon.uz/api/Lesson/GetAllLessons';
+  private apiUrl = 'https://edu-api.tohirjon.uz';
+
 
   constructor(private http: HttpClient) { }
 
   getAllCourses(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+    return this.http.get<any>(this.apiUrl1);
   }
 
   getLessonsByCourseId(courseId: string): Observable<any> {
     return this.http.get<any>(`${this.lessonsUrl}?courseId=${courseId}`);
   }
+
+
+
+  getVideoPath(videoId: string): Observable<{ videoPath: string }> {
+
+    return this.http.get<{ videoPath: string }>(`${this.apiUrl}/${videoId}`);
+  }
+
   courses: any[] = [];
   selectedCourseId: string | null = null;
   lessons: any[] = [];
@@ -47,10 +57,24 @@ export class LessonGetAllComponent {
     this.selectedLesson = this.selectedLesson === lesson ? null : lesson;
   }
 
-  onDownloadVideo(videoPath: string): void {
+  onDownloadVideo(videoId: string): void {
+    this.getVideoPath(videoId).subscribe(
+      (data) => {
+        const videoPath = data.videoPath;
+        this.downloadFile(videoPath);
+      },
+      (error) => {
+        console.error('There was an error with the fetch operation:', error);
+      }
+    );
+  }
+
+  private downloadFile(videoPath: string): void {
     const link = document.createElement('a');
     link.href = videoPath;
     link.download = videoPath.split('/').pop()!;
-    link.click();
+    document.body.appendChild(link); // Добавляем ссылку в DOM
+    link.click(); // Имитация клика для скачивания
+    document.body.removeChild(link); // Удаляем ссылку из DOM
   }
 }
