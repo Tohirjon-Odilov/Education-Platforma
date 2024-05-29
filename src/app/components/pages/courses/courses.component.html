@@ -21,7 +21,7 @@
 
       <div class="course-cards">
         @for (course of allCourses; track course.id) {
-        <div [routerLink]="['/course-detail']" class="course-card cursor">
+        <div (click)="setId(course.id)" [routerLink]="['/course-detail']" class="course-card cursor">
           <img
             src="assets/images/kattamen.png"
             alt=""
