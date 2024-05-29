@@ -52,7 +52,7 @@ export class CategoryComponent implements OnInit {
       localStorage.setItem('user', JSON.stringify(this.user));
 
       console.log(this.user.photoPath);
-    });
+    });;
   }
   
   // submit() {
@@ -74,4 +74,5 @@ export class CategoryComponent implements OnInit {
   //     alert('error');
   //   }
   // }
+
 }

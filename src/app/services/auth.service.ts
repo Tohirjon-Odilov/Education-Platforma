@@ -46,7 +46,7 @@ export class AuthService {
       })
     );
   }
-
+  
   login(data: Login): Observable<TokenModel> {
     return this.http.post<TokenModel>(`${this.apiUrl}Auth/Login`, data).pipe(
       map((response) => {
@@ -57,7 +57,7 @@ export class AuthService {
           
           this.decodedToken = this.decodeToken();
           // localStorage.setItem('userId', this.decodeToken);
-          console.log(this.decodeToken);
+          console.log(this.decodeToken());
         }
         return response;
       })
