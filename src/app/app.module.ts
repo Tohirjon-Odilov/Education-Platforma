@@ -24,6 +24,7 @@ import { ReceiveEmailCodeComponent } from './components/receive-email-code/recei
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { CoursePartComponent } from './components/ui/course-part/course-part.component';
 import { NavbarTitleComponent } from './components/ui/navbar-title/navbar-title.component';
@@ -65,6 +66,7 @@ import { QuizDeleteComponent } from './components/admin/quiz-crud/quiz-delete/qu
 import { QuizUpdateComponent } from './components/admin/quiz-crud/quiz-update/quiz-update.component';
 import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/quiz-get-all.component';
 import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
+import { LazyVideoComponent } from './components/admin/lesson/lazy-video/lazy-video.component';
 
 @NgModule({
   declarations: [
@@ -121,6 +123,7 @@ import { UserActivityComponent } from './components/admin/user-activity/user-act
     QuizUpdateComponent,
     QuizGetAllComponent,
     UserActivityComponent,
+    LazyVideoComponent,
   ],
   imports: [
     BrowserModule,
@@ -130,7 +133,8 @@ import { UserActivityComponent } from './components/admin/user-activity/user-act
     FormsModule,
     MatInputModule,
     MatSlideToggleModule,
-    ChartModule
+    ChartModule,
+    MatProgressSpinnerModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

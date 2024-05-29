@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LessonUpdateComponent } from './lesson-update.component';
+import { LazyVideoComponent } from './lazy-video.component';
 
-describe('LessonUpdateComponent', () => {
-  let component: LessonUpdateComponent;
-  let fixture: ComponentFixture<LessonUpdateComponent>;
+describe('LazyVideoComponent', () => {
+  let component: LazyVideoComponent;
+  let fixture: ComponentFixture<LazyVideoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LessonUpdateComponent]
+      declarations: [LazyVideoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(LessonUpdateComponent);
+    fixture = TestBed.createComponent(LazyVideoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
