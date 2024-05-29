@@ -18,7 +18,7 @@ export class OverwiewComponent implements OnInit {
     this.studentImg.nativeElement.disabled = true;
     this.studentImg.nativeElement.src =
       'https://edu-api.tohirjon.uz/' + this.src;
-      console.dir(this.studentImg.nativeElement, 'studentImg');
+    console.dir(this.studentImg.nativeElement, 'studentImg');
   }
 
   check() {
@@ -30,13 +30,13 @@ export class OverwiewComponent implements OnInit {
       console.log(res);
       this.topStudents = res.slice(0, 5);
 
-      // a2ba924a-4ae0-4220-a08b-5aa1ecf359d6 id'ga to'gragan userni topdan olib kelish
-      this.user = res.find((user: any) => user.id === localStorage.getItem("userId"));
+      this.user = res.find(
+        (user: any) => user.id === localStorage.getItem('userId')
+      );
 
       localStorage.setItem('user', JSON.stringify(this.user));
 
       console.log(this.user.photoPath);
-      
     });
   }
 }
