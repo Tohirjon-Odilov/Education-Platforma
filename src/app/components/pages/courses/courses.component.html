@@ -27,7 +27,7 @@
             alt=""
           />
           <div class="course-info">
-            <h2>
+            <h2 class="p-fixed">
               {{course.courseName}}
             </h2>
             <p class="p-fixed">
@@ -66,7 +66,7 @@
     </div>
     <div class="recom-courses">
       <div class="recom-courses-navbar">
-        <h2>Recommended Course</h2>
+        <h2 class="p-fixed">Recommended Course</h2>
         <button class="d-none">Browse Course <i class="fa-solid fa-arrow-right"></i></button>
       </div>
       @for (course of allCourses; track course.id) {
@@ -78,7 +78,7 @@
           />
           <div class="course-info">
 <!-- <<<<<<< HEAD
-            <h2>UX & Web Design Master Course: Strategy, Design,</h2>
+            <h2 class="p-fixed">UX & Web Design Master Course: Strategy, Design,</h2>
             <p class="p-fixed">Lorem ipsum dolor atis beatae eveniet.</p>
             <div class="card-info">
               <div>
@@ -89,7 +89,7 @@
                 <i class="fa-regular fa-clock"></i>
                 <p class="p-fixed">3h 4m total length</p>
 ======= -->
-            <h2>{{course.courseName}}</h2>
+            <h2 class="p-fixed">{{course.courseName}}</h2>
             <p class="p-fixed">{{course.description}}</p>
             <div class="card-info">
               <div>
