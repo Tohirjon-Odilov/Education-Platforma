@@ -5,7 +5,7 @@ Kirgandan so'ng bir marta refresh berilsa moshni ishlayapti
 
 admin@gmail.com
 Sardor0618!
-
+ 
 # USER
 ![image](https://github.com/Education-Platforma/Education-Platforma/assets/82634626/e553ffbe-565d-47cd-8390-2acb3ab6b8f6)
 ![image](https://github.com/Education-Platforma/Education-Platforma/assets/82634626/c4b2ac5c-5608-45b9-93f8-954d62f02b9a)
