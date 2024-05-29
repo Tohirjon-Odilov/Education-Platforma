@@ -78,6 +78,7 @@ export class CrudService {
     );
   }
   
+
     
   GetAllCategorys(): Observable<any> {
     return this.http.get<Category>(this.apiUrl + 'Category/GetCategories').pipe(

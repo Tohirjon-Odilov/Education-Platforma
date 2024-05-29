@@ -69,6 +69,8 @@ import { QuizUpdateComponent } from './components/admin/quiz-crud/quiz-update/qu
 import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/quiz-get-all.component';
 import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
 import { LazyVideoComponent } from './components/admin/lesson/lazy-video/lazy-video.component';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 
@@ -141,6 +143,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     MatSelectModule,
+    DialogModule,
+    ButtonModule, 
     MatMenuModule,
     MatButtonModule
   ],
