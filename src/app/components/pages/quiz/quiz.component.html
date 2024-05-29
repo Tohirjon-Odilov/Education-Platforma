@@ -17,18 +17,20 @@
         </div>
 
         <ol class="oll">
-          <li>
-            Which is Brand?
-            <span class="lispan current__test"><span>✓</span></span>
-          </li>
+          @for (quiz of quizes.$values; track quiz) {
+            <li>
+              {{quiz.question}}
+              <span class="lispan current__test"><span>✓</span></span>
+            </li>
+          }
         </ol>
       </div>
 
-      <div class="container-fluid">
+      <div id="goodBoy" class="container-fluid">
         <div class="jumbotron">
-          <h3 class="p-fixed">Quiz #1</h3>
+          <h3 class="p-fixed">Quiz #{{index+1}}</h3>
           <br />
-          <p class="p-fixed">Which elements can you not when use branding on Instagramm?</p>
+          <p class="p-fixed">{{quiz.question}}</p>
           <br />
         </div>
 
@@ -40,31 +42,31 @@
           <div>
             <div id="q1" class="collapse show" aria-labelledby="h1">
               <div class="card-body">
-                <div class="form-check" (click)="addClass()">
+                <div class="form-check" (click)="addClass(); select('A')">
                   <div class="{{ selected }}">
                     <span>A</span>
-                    Stories
+                    {{quiz.optionsA}}
                   </div>
                 </div>
 
-                <div class="form-check" (click)="addClass2()">
+                <div class="form-check" (click)="addClass2(); select('B')">
                   <div class="{{ selected2 }}">
                     <span>B</span>
-                    Caption
+                    {{quiz.optionsB}}
                   </div>
                 </div>
 
-                <div class="form-check" (click)="addClass3()">
+                <div class="form-check" (click)="addClass3(); select('C')">
                   <div class="{{ selected3 }}" for="q1_r3">
                     <span>C</span>
-                    Bio Profile
+                    {{quiz.optionsC}}
                   </div>
                 </div>
 
-                <div class="form-check d-none" (click)="addClass4()">
+                <div class="form-check" (click)="addClass4(); select('D')">
                   <div class="{{ selected4 }}" for="q1_r4">
                     <span>D</span>
-                    Logo
+                    {{quiz.optionsD}}
                   </div>
                 </div>
 
@@ -80,8 +82,8 @@
         </div>
 
         <div class="buttonCheck">
-          <button type="button" class="btn1  cursor"><b>Previous</b></button>
-          <button type="button" class={{check}} #checkAnswer (click)="answer()"><b>Check Answer</b></button>
+          <button (click)="preveus()" type="button" class="btn1  cursor"><b>Previous</b></button>
+          <button id="multi-button" (click)="checkAnswear();next(); " type="button" class={{check}} #checkAnswer (click)="answer()"><b>Next</b></button>
         </div>
       </div>
     </div>
