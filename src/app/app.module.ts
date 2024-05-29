@@ -25,6 +25,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ChartModule } from 'primeng/chart';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 import { CoursePartComponent } from './components/ui/course-part/course-part.component';
 import { NavbarTitleComponent } from './components/ui/navbar-title/navbar-title.component';
@@ -134,7 +136,9 @@ import { LazyVideoComponent } from './components/admin/lesson/lazy-video/lazy-vi
     MatInputModule,
     MatSlideToggleModule,
     ChartModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
