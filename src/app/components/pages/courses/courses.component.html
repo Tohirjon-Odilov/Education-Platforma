@@ -69,6 +69,7 @@
         <h2>Recommended Course</h2>
         <button class="d-none">Browse Course <i class="fa-solid fa-arrow-right"></i></button>
       </div>
+      @for (course of allCourses; track course.id) {
       <div class="recom-course-info">
         <div class="recom-course-card cursor">
           <img
@@ -76,16 +77,16 @@
             alt=""
           />
           <div class="course-info">
-            <h2>UX & Web Design Master Course: Strategy, Design,</h2>
-            <p>Lorem ipsum dolor atis beatae eveniet.</p>
+            <h2>{{course.courseName}}</h2>
+            <p>{{course.description}}</p>
             <div class="card-info">
               <div>
                 <i class="fa-regular fa-folder-open"></i>
-                <p>62 lectures</p>
+                <p>{{course.lessons.length}} lectures</p>
               </div>
               <div>
                 <i class="fa-regular fa-clock"></i>
-                <p>3h 4m total length</p>
+                <p>{{formatTotalTime(course.totalTime)}} total length</p>
               </div>
             </div>
             <div class="course-owner">
@@ -93,11 +94,12 @@
                 src="assets/images/kattamen.png"
                 alt=""
               />
-              <p>Ramon Reynald</p>
+              <p>{{course.teacherName}}</p>
             </div>
           </div>
         </div>
       </div>
+    }
     </div>
   </section>
 </main>
