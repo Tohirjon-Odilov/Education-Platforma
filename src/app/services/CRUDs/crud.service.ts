@@ -11,7 +11,7 @@ import { LessonModel } from '../../models/lesson-model';
   providedIn: 'root',
 })
 export class CrudService {
-  private apiUrl = 'https://edu-api.tohirjon.uz/api/';
+  private apiUrl = 'https://localhost:7250/api/';
   
   constructor(private http: HttpClient) {}
 
@@ -121,6 +121,10 @@ export class CrudService {
 
   GetAllCourses(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl + 'Course/GetAllCourses')
+  }
+
+  getCourseById(CourseId: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}Course/GetCourseById?id=${CourseId}`)
   }
 
   CreateLesson(data: LessonModel): Observable<any> {

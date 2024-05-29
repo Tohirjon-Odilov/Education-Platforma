@@ -13,19 +13,16 @@
           <i class="fa-solid fa-arrow-left"></i>
           Courses
         </a>
-        <h2 class="p-fixed">Gaminification: Motivation Psychology & The art of Engagement</h2>
+        <h2 class="p-fixed">Gaminification: {{course.courseName}}</h2>
         <p class="p-fixed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem,
-          tempora?
+          {{course.description}}
         </p>
-
         <div class="course__detail-video--info">
           <img width="40" src="assets/images/kattamen.png" alt="" />
-          <strong>Katteman</strong>
-          <span><i class="fa-regular fa-paste"></i>Lecture</span>
-          <span><i class="fa-regular fa-clock"></i>total length</span>
+          <strong>{{course.teacherName}}</strong>
+          <span><i class="fa-regular fa-paste"></i>{{course.lessons.length}} Lecture</span>
+          <span><i class="fa-regular fa-clock"></i>{{formatTotalTime(course.totalTime)}} total length</span>
         </div>
-
         <div class="course__detail-learn">
           <h3 class="p-fixed">What you'll learn</h3>
           <ul>
@@ -43,7 +40,6 @@
             <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
           </ul>
         </div>
-
         <div class="course__detail-descriptions">
           <h3 class="p-fixed">Descriptions</h3>
           <p class="p-fixed">
@@ -61,22 +57,24 @@
         <h2 class="p-fixed">Course Content</h2>
         <div class="course__detail-time flex cursor"  (click)="toggle()">
           <div class="flex text">
-            6 sections ● 46 lectures ● 2h 30m total length
+            6 sections ● {{course.lessons.length}} lectures ● {{formatTotalTime(course.totalTime)}} total length
           </div>
           <button class="cursor">Expand All <i class="fa-solid fa-chevron-down"></i></button>
         </div>
         <!-- Video info -->
         <ul class={{toggleCourseContent}}>
-          <li class="flex">
+          @for (lesson of course.lessons; track lesson) {
+          <li class="flex" style="margin-bottom: 10px;">
             <div class="flex">
               <i class="fa-solid fa-play"></i>
-              <h4>Lorem ipsum dolor sit amet.</h4>
-            </div>
-            <div class="flex">
-              <p class="p-fixed"><i class="fa-regular fa-paste"></i>2 Lecture</p>
-              <p class="p-fixed"><i class="fa-regular fa-clock"></i>10 min</p>
-            </div>
-          </li>
+                <h4>{{lesson.title}}</h4>
+              </div>
+              <div class="flex">
+                <p class="p-fixed"><i class="fa-regular fa-paste"></i>{{course.lessons.length}} Lecture</p>
+                <p class="p-fixed"><i class="fa-regular fa-clock"></i>{{formatTotalTime(course.totalTime)}} length</p>
+              </div>
+            </li>
+          }
         </ul>
       </div>
 
@@ -85,7 +83,7 @@
         <div class="course__detail-instructor__img flex">
           <img width="40" src="assets/images/kattamen.png" alt="" />
           <div>
-            <h4>Katteman</h4>
+            <h4>{{course.teacherName}}</h4>
             <p class="p-fixed">Ux Designer</p>
           </div>
         </div>
@@ -104,10 +102,7 @@
         </div>
         <div class="course__detail-instructor__description">
           <p class="p-fixed">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed earum
-            accusantium quos laborum, repudiandae quisquam, consequatur, quidem
-            voluptates doloribus accusamus fugit magni alias molestiae aliquid
-            iure cumque voluptate.
+            {{course.description}}
           </p>
         </div>
       </div>
@@ -121,7 +116,7 @@
           <span class="course__detail-card__play"></span>
         </div>
         <div class="course__detail-card__price">
-          <p class="p-fixed">$29.99</p>
+          <p class="p-fixed">${{course.price}}</p>
         </div>
         <div class="course__detail-card__action">
           <button>Add to Cart</button>
@@ -130,7 +125,7 @@
         <div class="course__detail-card__includes">
           <h3 class="p-fixed">This course Includes:</h3>
           <ul>
-            <li><i class="fa-solid fa-play"></i> 3 hours on - demend video</li>
+            <li><i class="fa-solid fa-play"></i> {{formatTotalTime(course.totalTime)}} hours on - demend video</li>
             <li><i class="fa-solid fa-clock"></i> full Lifetime access</li>
             <li><i class="fa-solid fa-lock-open"></i>Access on mobile and TV</li>
           </ul>
