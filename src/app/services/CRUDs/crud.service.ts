@@ -119,6 +119,10 @@ export class CrudService {
       );
   }
 
+  GetAllCourses(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl + 'Course/GetAllCourses')
+  }
+
   CreateLesson(data: LessonModel): Observable<any> {
     data.CourseId = 'dd62fbd0-df18-4e9f-a80d-a94993a515f9';
     return this.http.post(this.apiUrl + 'Lesson/CreateLesson', data).pipe(
