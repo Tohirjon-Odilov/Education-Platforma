@@ -23,6 +23,10 @@ export class CoursesComponent  {
     }, 1000);
   }
 
+  setId(id:string|any){
+    localStorage.setItem("courseId",id)
+  }
+
   
   formatTotalTime(totalMinutes: number): string {
     const hours = Math.floor(totalMinutes / 60);
