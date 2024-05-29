@@ -19,12 +19,18 @@ export class ProfileComponent {
 
   onSubmit() {
     if (this.selectedFile) {
+      const username = document.querySelector(
+        '#profile-username'
+      ) as HTMLInputElement;
+      const country = document.querySelector(
+        '#profile-country'
+      ) as HTMLInputElement;
       const formData = new FormData();
       formData.append('Id', this.user.id);
-      formData.append('FullName', this.user.fullName);
-      formData.append('Role', "this.user.Role");
+      formData.append('FullName', username.value);
+      formData.append('Role', this.user.role);
       formData.append('Photo', this.selectedFile);
-      formData.append('Counry', this.user.country);
+      formData.append('Counry', country.value);
 
       // Send the photo to the server
       this.http
@@ -38,5 +44,11 @@ export class ProfileComponent {
           }
         );
     }
+  }
+
+  visible: boolean = false;
+
+  showDialog() {
+    this.visible = true;
   }
 }

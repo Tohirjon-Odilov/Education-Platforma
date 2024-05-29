@@ -69,6 +69,9 @@ import { QuizUpdateComponent } from './components/admin/quiz-crud/quiz-update/qu
 import { QuizGetAllComponent } from './components/admin/quiz-crud/quiz-get-all/quiz-get-all.component';
 import { UserActivityComponent } from './components/admin/user-activity/user-activity.component';
 import { LazyVideoComponent } from './components/admin/lesson/lazy-video/lazy-video.component';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
+
 
 @NgModule({
   declarations: [
@@ -138,7 +141,9 @@ import { LazyVideoComponent } from './components/admin/lesson/lazy-video/lazy-vi
     ChartModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    DialogModule,
+    ButtonModule, 
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
