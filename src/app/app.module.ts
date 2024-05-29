@@ -71,7 +71,8 @@ import { UserActivityComponent } from './components/admin/user-activity/user-act
 import { LazyVideoComponent } from './components/admin/lesson/lazy-video/lazy-video.component';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -144,6 +145,8 @@ import { ButtonModule } from 'primeng/button';
     MatSelectModule,
     DialogModule,
     ButtonModule, 
+    MatMenuModule,
+    MatButtonModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

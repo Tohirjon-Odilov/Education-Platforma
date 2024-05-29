@@ -8,7 +8,10 @@
     <div class="warpper">
       <div class="section">
         <div class="navbar1">
-          <div><h1>Leardboard</h1></div>
+          <div class="allStudents flex">
+            <h1>@if(user.role == "Admin"){ All Users } @else{ Leaderboard }</h1>
+            <p class="p-fixed">{{ topStudents && topStudents.length }}</p>
+          </div>
           <div class="searchBorder">
             <i class="fas fa-search"></i>
             <input
@@ -56,7 +59,11 @@
                     </div>
                   </div>
                   <img
-                    [src]="student.photoPath === null || student.photoPath === '' ? 'assets/images/kattamen.png' : 'https://edu-api.tohirjon.uz/' + student.photoPath"
+                    [src]="
+                      student.photoPath === null || student.photoPath === ''
+                        ? 'assets/images/kattamen.png'
+                        : 'https://edu-api.tohirjon.uz/' + student.photoPath
+                    "
                     width="40"
                     [alt]="student.name + ' avatar'"
                   />
@@ -65,9 +72,20 @@
                     <p class="p-fixed">{{ student.country }}</p>
                   </div>
                   <p class="total p-fixed">{{ student.exp }}</p>
-                  <p class="completed p-fixed">{{ student.completedCourses }}</p>
-                  <time class="learning p-fixed">{{ student.learningTime }}</time>
-                  <p class="action p-fixed">•••</p>
+                  <p class="completed p-fixed">
+                    {{ student.completedCourses }}
+                  </p>
+                  <time class="learning p-fixed">{{
+                    student.learningTime
+                  }}</time>
+                  @if (user.role === "Admin") {
+                  <!-- <p class="action"></p> -->
+                  <button mat-button [matMenuTriggerFor]="menu">•••</button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Update</button>
+                    <button mat-menu-item>Delete</button>
+                  </mat-menu>
+                  }
                 </div>
               </a>
             </li>
