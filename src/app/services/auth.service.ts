@@ -19,6 +19,10 @@ export class AuthService {
   tokenKey = 'accessToken';
   role: string = '';
 
+  resetRequest(email:string):Observable<any>{
+    return this.http.post<any>(this.apiUrl+`Auth/ForgotPassword?email=${email}`,{})
+  }
+
   decodeToken(): any {
     try {
       return jwtDecode(localStorage.getItem(this.tokenKey)!);
