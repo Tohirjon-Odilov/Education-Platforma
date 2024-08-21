@@ -10,9 +10,9 @@ export class NavbarTitleComponent implements OnInit {
   currentDate!: string;
 
   constructor() {
-    localStorage.getItem('user');
+    // localStorage.getItem('user');
 
-    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    // this.user = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   ngOnInit(): void {

@@ -12,11 +12,7 @@ export class RegisterComponent {
   constructor(private authService: AuthService, private router: Router) {
     localStorage.clear();
   }
-  // onSubmit(form: NgForm) {
-  //   console.log('Form submitted:', form.value);
-  //   // Process form data here (e.g., send to server)
-  //   form.reset(); // Reset form after submission
-  // }
+
   fullname = '';
   username = '';
   country = '';
@@ -54,8 +50,6 @@ export class RegisterComponent {
           this.email = '';
           this.password = '';
         } else {
-          console.log('keldi lekin response null');
-          // alert('Oops! Something went wrong. Please try again.');
           console.log(response);
           this.email = '';
           this.password = '';
@@ -64,7 +58,6 @@ export class RegisterComponent {
       error: (err) => {
         alert(err.error.message);
         console.log('vashshe error');
-        // alert('Oops! Something went wrong. Please try again.');
         this.email = '';
         this.password = '';
       },
@@ -99,7 +92,6 @@ export class RegisterComponent {
         }
       },
       error: (err) => {
-        // alert(err.message)
         alert('Oops !, Can you try again');
         this.fullname = '';
         this.country = '';

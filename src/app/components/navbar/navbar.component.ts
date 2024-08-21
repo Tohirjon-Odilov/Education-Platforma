@@ -10,8 +10,8 @@ export class NavbarComponent {
   user: any;
   topStudents: any;
   constructor(private userService: UserService) {
-    localStorage.getItem("user");
-    this.user = JSON.parse(localStorage.getItem("user") || '{}');
+    // localStorage.getItem("user");
+    // this.user = JSON.parse(localStorage.getItem("user") || '{}');
   }
 
   ngOnInit(): void {
@@ -19,11 +19,11 @@ export class NavbarComponent {
       console.log(res);
       this.topStudents = res.slice(0, 5);
 
-      this.user = res.find(
-        (user: any) => user.id === localStorage.getItem('userId')
-      );
+      // this.user = res.find(
+      //   (user: any) => user.id === localStorage.getItem('userId')
+      // );
 
-      localStorage.setItem('user', JSON.stringify(this.user));
+      // localStorage.setItem('user', JSON.stringify(this.user));
 
       console.log(this.user.photoPath);
     });

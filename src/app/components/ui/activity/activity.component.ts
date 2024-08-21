@@ -10,8 +10,8 @@ export class ActivityComponent {
 
   constructor() {
     console.log('Activity component created');
-    localStorage.getItem('user');
-    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    // localStorage.getItem('user');
+    // this.user = JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   status: string = 'activity rating';

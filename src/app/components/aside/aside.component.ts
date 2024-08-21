@@ -12,11 +12,11 @@ export class AsideComponent {
   role: any = '';
 
   constructor() {
-    this.role = jwtDecode(this.token);
-    localStorage.getItem('role') === 'admin'
-      ? (this.isAdmin = true)
-      : (this.isAdmin = false);
-    this.role = this.role.Role;
-    console.log(this.role);
+    // this.role = jwtDecode(this.token);
+    // localStorage.getItem('role') === 'admin'
+      // ? (this.isAdmin = true)
+      // : (this.isAdmin = false);
+    // this.role = this.role.Role;
+    // console.log(this.role);
   }
 }
